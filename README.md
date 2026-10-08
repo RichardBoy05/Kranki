@@ -3,3 +3,4 @@
 
 ## Autori
 - Richard Meoli
+- Francesco Berardi
