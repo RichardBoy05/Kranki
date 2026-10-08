@@ -4,3 +4,4 @@
 ## Autori
 - Richard Meoli
 - Francesco Berardi
+- Giorgio Rapetti
