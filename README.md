@@ -5,3 +5,4 @@
 - Richard Meoli
 - Francesco Berardi
 - Giorgio Rapetti
+- Gabriele Pullano
