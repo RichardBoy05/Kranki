@@ -1,7 +1,7 @@
 ## 2. Modello di processo
 
 ### 2.1 Approccio metodologico
-Il ciclo di vita del software adotterà un approccio metodologico ibrido, integrando il rigore formale del *Rational Unified Process* (RUP) con l'agilità del framework *Scrum*. Questa scelta strategica è guidata dalla necessità di coniugare i requisiti valutativi del progetto con l'efficienza dello sviluppo. Il RUP fornisce la struttura ideale per soddisfare le richieste accademiche relative alla progettazione orientata agli oggetti e alla modellazione UML; d'altra parte, Scrum garantisce la flessibilità e l'adattività necessarie per la gestione pratica della stesura del codice.
+Il ciclo di vita del software adotterà un approccio metodologico ibrido, integrando il rigore formale del *Rational Unified Process* (RUP) con l'agilità del framework *Scrum*. Questa scelta strategica è guidata dalla necessità di coniugare i requisiti valutativi del progetto con l'efficienza dello sviluppo. Il RUP fornisce la struttura ideale per soddisfare le richieste relative alla progettazione orientata agli oggetti e alla modellazione UML; d'altra parte, Scrum garantisce la flessibilità e l'adattività necessarie per la gestione pratica della stesura del codice.
 
 ### 2.2 Fasi del ciclo di vita
 L'evoluzione del progetto è strutturata secondo le quattro macro-fasi previste dal RUP:
