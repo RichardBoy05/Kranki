@@ -18,7 +18,7 @@ La fase di stesura del codice è vincolata all'interno di *Sprint* di durata fis
 *(Nota: Gli obiettivi dei singoli Sprint sono puramente indicativi e si adattano dinamicamente in base alle priorità del Product Backlog).*
 
 ### 2.1.3 Approccio MDA
-Durante la fase di *Elaboration*, il team adotta tecniche proprie del paradigma MDA limitandone l'applicazione allo sviluppo di parte del modulo centrale (`kranki-core`). Utilizzando il software di modellazione **StarUML**, viene disegnato il *Class Diagram* relativo al dominio applicativo. In seguito, sfruttando la funzionalità di generazione del codice integrata nel tool, una porzione del diagramma viene tradotta automaticamente nello scheletro Java delle entità fondamentali del sistema (es. `Deck`, `Flashcard`, `Tag`). Questo perimetro di applicazione mirato evita la generazione di codice boilerplate inutile nei moduli UI e DB, limitando l'intervento manuale degli sviluppatori alla sola implementazione della logica di business all'interno degli *Sprint*.
+Durante la fase di *Elaboration*, il team adotta tecniche proprie del paradigma MDA limitandone l'applicazione allo sviluppo di parte del modulo centrale (`kranki-core`). Utilizzando il software di modellazione **StarUML**, viene disegnato il *Class Diagram* relativo al dominio applicativo. In seguito, sfruttando la funzionalità di generazione del codice integrata nel tool, una porzione del diagramma viene tradotta automaticamente nello scheletro Java delle entità fondamentali del sistema (es. `Deck`, `Flashcard`, `Tag`). Questo perimetro di applicazione mirato evita la generazione di codice *boilerplate* inutile nei moduli UI e DB, limitando l'intervento manuale degli sviluppatori alla sola implementazione della logica di business all'interno degli *Sprint*.
 
 ### 2.1.4 Formalizzazione della Gestione delle *Change Request* / *Issue*
 TODO - si può fare un *activity diagram*
@@ -29,7 +29,7 @@ TODO - si può fare un *activity diagram*
 ## 2.2 Gestione della Configurazione
 
 ### 2.2.1 Strumenti adottati
-Come definito nelle procedure descritte all'interno del *Project Plan* (e documentate dettagliatamente nel file [[CONTRIBUTING.md](https://github.com/RichardBoy05/Kranki/blob/main/CONTRIBUTING.md)](CONTRIBUTING.md)), la gestione della configurazione, il versionamento del codice e la collaborazione tra i membri del team sono interamente gestiti tramite **GitHub**.
+Come definito nelle procedure descritte all'interno del *Project Plan* (e documentate dettagliatamente nel file [CONTRIBUTING.md](https://github.com/RichardBoy05/Kranki/blob/main/CONTRIBUTING.md)), la gestione della configurazione, il versionamento del codice e la collaborazione tra i membri del team sono interamente gestiti tramite **GitHub**.
 In particolare, per garantire la tracciabilità tra i requisiti e il codice effettivamente prodotto, il team sfrutta l'ecosistema integrato della piattaforma: ogni modifica al sistema è guidata da uno specifico *Issue*, il cui ciclo di vita è orchestrato visivamente tramite *Kanban Board*. Si collega l'avanzamento dei task ai relativi *branch* di sviluppo e alle *Pull Request*, assicurando un controllo totale sullo stato della configurazione del software.
 
 ### 2.2.2 Criteri di tracciamento e `.gitignore`
@@ -47,3 +47,18 @@ A dimostrazione dell'adozione continua degli strumenti di collaborazione (*Branc
 * **Numero di *Pull Request* gestite:** [TODO: inserire numero a fine progetto]
 * **Numero di *Issue* chiusi:** [TODO: inserire numero a fine progetto]
 * ***Branch* creati:** [TODO: inserire numero a fine progetto]
+
+
+
+
+## 2.3 Gestione delle Persone e Organizzazione del Team
+
+### 2.3.1 Inquadramento del modello organizzativo
+In conformità a quanto stabilito nel *Project Plan*, il gruppo di lavoro adotta la configurazione di **Squadra Agile** declinata secondo il framework *Scrum*, scartando modelli fortemente gerarchici o centralizzati come il *Capo Squadra Programmatore* (*Chief Programmer Team*). La struttura scelta si fonda sull'assenza di una gerarchia interna, su canali di comunicazione brevi e informali e su un'elevata autodisciplina dei singoli componenti. 
+
+A integrazione dei ruoli di *Scrum Master* e *Development Team* già delineati nella pianificazione iniziale, la figura del ***Product Owner* (PO)** — responsabile della definizione delle funzionalità e della gestione del *Product Backlog* — viene assunta in modo condiviso dall'intero team di sviluppo. Essendo i membri del gruppo contemporaneamente sviluppatori ed esperti del dominio applicativo, le decisioni sulle priorità del prodotto vengono prese collettivamente, operando all'interno dei vincoli stabiliti dalla committenza.
+
+### 2.3.2 Allocazione operativa del lavoro
+Coerentemente con la natura auto-organizzata del team *Scrum*, la pianificazione e la distribuzione dei compiti durante gli *Sprint* non avvengono tramite assegnazione diretta dall'alto. All'avvio di ogni iterazione, il team si confronta per selezionare i compiti da inserire nello *Sprint Backlog*, attribuendo collettivamente a ciascun *Issue* un punteggio rappresentativo della difficoltà implementativa (*Story Points*). Questo meccanismo consente di misurare a fine *Sprint* il punteggio totale effettivamente realizzato (*Velocity*), permettendo al gruppo di verificare l'accuratezza delle proprie previsioni e di calibrare meglio il carico di lavoro per le iterazioni successive.
+
+Una volta definito lo *Sprint Backlog*, i membri del team prelevano in autonomia gli *Issue* (auto-assegnazione). La scelta si orienta prevalentemente verso le rispettive aree di focus primario, in modo da ammortizzare le curve di apprendimento legate alle tecnologie specifiche di ciascun modulo, pur mantenendo la flessibilità operativa necessaria per collaborare trasversalmente in caso di necessità.
