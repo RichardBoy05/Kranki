@@ -2,7 +2,7 @@
 
 ## 2.1 Ciclo di vita del software
 
-### 2.1.1 Processo di sviluppo applicato
+### 2.1.1 Processo di sviluppo
 In conformità a quanto stabilito nel *Project Plan*, il team implementa un processo di sviluppo ibrido. La fase iniziale di analisi e progettazione segue le direttive del framework RUP (*Inception* ed *Elaboration*), concentrandosi sull'ingegneria dei requisiti e sulla modellazione del dominio. La successiva fase operativa di *Construction* viene gestita attraverso l'applicazione del framework agile *Scrum*. Infine, la fase di *Transition* è dedicata al testing di sistema integrato, alla risoluzione degli ultimi difetti e alla preparazione dell'applicativo per la consegna finale.
 
 ### 2.1.2 *Timebox* e pianificazione degli *Sprint*
