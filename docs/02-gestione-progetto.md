@@ -51,7 +51,7 @@ A dimostrazione dell'adozione continua degli strumenti di collaborazione (*Branc
 
 
 
-## 2.3 Gestione delle Persone e Organizzazione del Team
+## 2.3 Gestione delle persone e organizzazione del team
 
 ### 2.3.1 Inquadramento del modello organizzativo
 In conformità a quanto stabilito nel *Project Plan*, il gruppo di lavoro adotta la configurazione di **Squadra Agile** declinata secondo il framework *Scrum*, scartando modelli fortemente gerarchici o centralizzati come il *Capo Squadra Programmatore* (*Chief Programmer Team*). La struttura scelta si fonda sull'assenza di una gerarchia interna, su canali di comunicazione brevi e informali e su un'elevata autodisciplina dei singoli componenti. 
