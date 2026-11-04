@@ -38,7 +38,7 @@ Per mantenere il repository pulito e privo di file generati localmente o non nec
 * Le cartelle di build generate da Maven (`target/`).
 * Le impostazioni locali dell'IDE (`.settings/`).
 
-Al contrario, i file fondamentali per l'importazione e la configurazione strutturale del progetto su altri ambienti, come i file `pom.xml` (per Maven) e il file nascosto `.project` (specifico per l'infrastruttura Eclipse), sono stati esplicitamente mantenuti sotto tracciamento di versione.
+Al contrario, i file fondamentali per l'importazione e la configurazione strutturale del progetto su altri ambienti, come i file `pom.xml` (per Maven) e il file nascosto `.project` (specifico per l'infrastruttura Eclipse), sono stati esplicitamente mantenuti.
 
 ### 2.2.3 Statistiche del repository
 A dimostrazione dell'adozione continua degli strumenti di collaborazione (*Branch*, *Pull Request*, *Code Review* e *Kanban Board*), si riportano le statistiche globali del repository generate al termine della fase di sviluppo:
