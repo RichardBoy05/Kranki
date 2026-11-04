@@ -26,7 +26,7 @@ TODO - si può fare un *activity diagram*
 
 
 
-## 2.2 Gestione della Configurazione
+## 2.2 Gestione della configurazione
 
 ### 2.2.1 Strumenti adottati
 Come definito nelle procedure descritte all'interno del *Project Plan* (e documentate dettagliatamente nel file [CONTRIBUTING.md](https://github.com/RichardBoy05/Kranki/blob/main/CONTRIBUTING.md)), la gestione della configurazione, il versionamento del codice e la collaborazione tra i membri del team sono interamente gestiti tramite **GitHub**.
