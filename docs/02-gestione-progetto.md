@@ -15,7 +15,7 @@ La fase di stesura del codice è vincolata all'interno di *Sprint* di durata fis
 | **Sprint 3** | 17 Dicembre 2026 | 31 Dicembre 2026 | TODO - da definire   |
 | **Sprint 4** | 31 Dicembre 2026 | 14 Gennaio 2027  | TODO - da definire   |
 
-*(Nota: gli obiettivi dei singoli *Sprint* sono puramente indicativi e si adattano dinamicamente in base alle priorità del *Product Backlog*).*
+*(Nota: gli obiettivi dei singoli Sprint sono puramente indicativi e si adattano dinamicamente in base alle priorità del Product Backlog).*
 
 ### 2.1.3 Approccio MDA
 Durante la fase di *Elaboration*, il team adotta tecniche proprie del paradigma MDA limitandone l'applicazione allo sviluppo di parte del modulo centrale (`kranki-core`). Utilizzando il software di modellazione **StarUML**, viene disegnato il *Class Diagram* relativo al dominio applicativo. In seguito, sfruttando la funzionalità di generazione del codice integrata nel tool, una porzione del diagramma viene tradotta automaticamente nello scheletro Java delle entità fondamentali del sistema (es. `Deck`, `Flashcard`,...). Questo perimetro di applicazione mirato evita la generazione di codice *boilerplate* inutile nei moduli UI e DB, limitando l'intervento manuale degli sviluppatori alla sola implementazione della logica di business all'interno degli *Sprint*.
@@ -43,10 +43,9 @@ Al contrario, i file fondamentali per l'importazione e la configurazione struttu
 ### 2.2.3 Statistiche del repository
 A dimostrazione dell'adozione continua degli strumenti di collaborazione (*Branch*, *Pull Request*, *Code Review* e *Kanban Board*), si riportano le statistiche globali del repository generate al termine della fase di sviluppo:
 
-* **Numero totale di *Commit*:** [TODO: inserire numero a fine progetto]
-* **Numero di *Pull Request* gestite:** [TODO: inserire numero a fine progetto]
+* **Numero totale di Commit:** [TODO: inserire numero a fine progetto]
 * **Numero di *Issue* chiusi:** [TODO: inserire numero a fine progetto]
-* ***Branch* creati:** [TODO: inserire numero a fine progetto]
+
 
 
 
