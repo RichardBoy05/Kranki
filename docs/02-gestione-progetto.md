@@ -1,4 +1,4 @@
-# 2 — Gestione del Progetto
+# 2. Gestione del progetto
 
 ## 2.1 Ciclo di Vita del Software
 
