@@ -1,12 +1,12 @@
-## 11. Risorse
+## 1.11 Risorse
 
 Il progetto prevede l'impiego delle seguenti risorse hardware e software.
 
-### 11.1 Risorse hardware
+### 1.11.1 Risorse hardware
 
 Lo sviluppo e il test avverranno sui computer personali dei membri del team.
 
-### 11.2 Risorse software
+### 1.11.2 Risorse software
 
 * **Ambienti di sviluppo:** Eclipse IDE.
 * **Tool di modellazione:** StarUML v5.

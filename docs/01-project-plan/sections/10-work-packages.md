@@ -1,4 +1,4 @@
-## 10. Pacchetti di lavoro
+## 1.10 Pacchetti di lavoro
 L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre componenti principali, corrispondenti ad altrettanti progetti Eclipse Maven. Le attività si articolano nei seguenti *Work Packages* (WP).
 
 *   **Core (`kranki-core`)**\

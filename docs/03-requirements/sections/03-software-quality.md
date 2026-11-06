@@ -1,8 +1,8 @@
-## Qualità del software
+## 3.2 Qualità del software
 
 La progettazione, lo sviluppo e la valutazione qualitativa del sistema Kranki sono stati condotti adottando la **Tassonomia di McCall**, preferita allo standard ISO 9126 per la sua chiara organizzazione in macro-categorie. Tale framework permette infatti di declinare oggettivamente la qualità del software secondo tre aree distinte: il funzionamento operativo del sistema (*Product Operations*), le necessità tecniche del team di sviluppo (*Product Revision*) e il ciclo di vita del prodotto in relazione all'ambiente di esecuzione (*Product Transition*). In particolare, per il contesto del progetto, si è scelto di privilegiare i seguenti fattori di qualità.
 
-### 1. Product operations
+### 3.2.1 Product operations
 Questa categoria raccoglie i fattori qualitativi legati all'utilizzo quotidiano del sistema da parte dello studente.
 
 * **Usabilità**: il sistema deve minimizzare il carico cognitivo associato all'interazione con l'interfaccia, permettendo all'utente di mantenere il focus esclusivamente sull'apprendimento.\
@@ -12,7 +12,7 @@ Questa categoria raccoglie i fattori qualitativi legati all'utilizzo quotidiano 
 * **Integrità**: i dati personali e i mazzi di carte dello studente devono essere protetti da accessi o manipolazioni non autorizzate.\
   *Verificabilità*: implementazione di un sistema di autenticazione mediante credenziali, atto a vincolare l'accesso ai dati salvati esclusivamente al legittimo proprietario.
 
-### 2. Product revision
+### 3.2.2 Product revision
 Questa categoria riflette l'attitudine del software a essere analizzato, manutenuto ed evoluto dal team di sviluppo.
 
 * **Manutenibilità**: il codice sorgente deve prevenire il degrado architetturale, mantenendosi leggibile e rigorosamente strutturato per agevolare lo sviluppo parallelo.\
@@ -20,7 +20,7 @@ Questa categoria riflette l'attitudine del software a essere analizzato, manuten
 * **Testabilità**: le logiche algoritmiche centrali del sistema (come il motore di *Spaced Repetition*) devono produrre risultati predicibili e agevolmente collaudabili in modo isolato.\
   *Verificabilità*: adozione del framework **JUnit** per la stesura di test unitari automatizzati, affiancato dallo strumento **JaCoCo** per la misurazione continua e oggettiva della *Code Coverage*, con focus ispettivo primario sul modulo della logica di business (`kranki-core`).
 
-### 3. Product transition
+### 3.2.3 Product transition
 Questa categoria valuta l'adattabilità del software ai cambiamenti ambientali e la sua capacità di integrarsi con l'esterno.
 
 * **Riutilizzabilità**: l'architettura del software deve consentire il riuso dei suoi componenti in contesti operativi differenti, come ad esempio in future trasposizioni in ambito *mobile*.\

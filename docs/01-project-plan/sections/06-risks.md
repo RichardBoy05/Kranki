@@ -1,8 +1,8 @@
-## 6. Rischi
+## 1.6 Rischi
 
 Di seguito sono riportati i principali fattori di rischio previsti per il progetto, suddivisi in tre categorie, unitamente alle relative strategie di mitigazione.
 
-### 6.1 Rischi funzionali
+### 1.6.1 Rischi funzionali
 
 *   **Complessità dell'algoritmo di scheduling adattivo**\
     Comprimere gli intervalli di ripasso in funzione di una data d'esame prefissata comporta una notevole complessità algoritmica.\
@@ -11,7 +11,7 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
     La naturale tendenza a integrare funzionalità non pianificate rischia di distogliere l'attenzione dalle priorità del progetto, compromettendo la realizzazione delle parti essenziali del sistema.\
     *Mitigazione:* applicazione preventiva del metodo MoSCoW, ammettendo lo sviluppo di eventuali requisiti emersi in corso d'opera solo a seguito del completamento delle funzionalità prioritarie.
 
-### 6.2 Rischi tecnologici
+### 1.6.2 Rischi tecnologici
 
 *   **Conflitti di sincronizzazione multi-dispositivo**\
     La modifica concorrente dei dati su dispositivi diversi comporta il rischio di conflitti durante la sincronizzazione con il database remoto.\
@@ -20,7 +20,7 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
     L'implementazione di elementi grafici complessi, come un editor di testo avanzato, presenta difficoltà realizzative non trascurabili.\
     *Mitigazione:* se necessario, si adotteranno soluzioni più semplici, privilegiando il corretto funzionamento del sistema piuttosto che l'estetica.
 
-### 6.3 Rischi organizzativi
+### 1.6.3 Rischi organizzativi
 
 *   **Curve di apprendimento**\
     L'integrazione di un database remoto come Firebase e lo studio di nuovi framework per la GUI richiederanno un importante sforzo di comprensione iniziale.\
