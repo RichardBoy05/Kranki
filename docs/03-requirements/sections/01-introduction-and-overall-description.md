@@ -104,7 +104,7 @@ La definizione dei requisiti è il risultato di un processo iterativo e multi-me
 
 * **Derivazione da un sistema esistente**: è stata condotta un'analisi comparativa dei software di *Spaced Repetition* esistenti, con particolare focus su Anki. Tale approccio ha permesso di derivare il set di requisiti funzionali di base e di identificare potenziali criticità sulle quali intervenire con soluzioni migliorative.
 
-* **Brainstorming:** il team ha organizzato sessioni collaborative per far emergere idee e funzionalità innovative. Ogni requisito è stato vagliato e classificato mediante il metodo **MoSCoW** (Must, Should, Could, Won't have), garantendo un periodo previsto di sviluppo coerente con le tempistiche accademiche.
+* **Brainstorming**: il team ha organizzato sessioni di gruppo per far emergere idee e funzionalità innovative. In particolare, ciascun requisito è stato classificato mediante il metodo **MoSCoW**.
 
 * **Etnografia**: poiché i membri del team sono utilizzatori quotidiani di strumenti di studio in ambito universitario, è stata applicata una forma di auto-osservazione. Questo ha permesso di far emergere esigenze tacite e abitudini consolidate che un'analisi puramente teorica avrebbe ignorato.
 
