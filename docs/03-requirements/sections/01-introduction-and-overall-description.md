@@ -98,7 +98,7 @@ Il seguente glossario contiene le definizioni dei termini tecnici di dominio uti
 
 
 
-La definizione dei requisiti di Kranki è il risultato di un processo iterativo e multi-metodologico, volto a minimizzare l'incertezza progettuale e garantire che ogni funzionalità risponda a esigenze concrete. Il team ha integrato diverse tecniche di elicitazione per coprire sia gli aspetti funzionali che quelli legati alla qualità dell'esperienza d'uso:
+La definizione dei requisiti è il risultato di un processo iterativo e multi-metodologico. Il team ha integrato diverse tecniche di elicitazione per coprire sia gli aspetti funzionali che quelli legati alla qualità dell'esperienza d'uso.
 
 
 
