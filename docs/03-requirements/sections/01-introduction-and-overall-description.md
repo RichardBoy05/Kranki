@@ -12,7 +12,7 @@ Kranki è un'applicazione dedicata allo studio tramite *flashcard*, progettata p
 
 
 
-La presente sezione del documento definisce le specifiche funzionali del sistema. L'ingegneria dei requisiti è stata condotta adottando i principi dello standard **IEEE 830**, al fine di garantire una comunicazione chiara, univoca e verificabile tra il team di sviluppo e gli stakeholder.
+La presente sezione del documento definisce le specifiche funzionali del sistema. La specifica dei requisiti è stata redatta in conformità con i principi dello standard **IEEE 830**, al fine di ridurre possibili ambiguità interpretative tra il team di sviluppo e gli *stakeholder*.
 
 
 
