@@ -106,7 +106,7 @@ La definizione dei requisiti è il risultato di un processo iterativo e multi-me
 
 * **Brainstorming:** il team ha organizzato sessioni collaborative per far emergere idee e funzionalità innovative. Ogni requisito è stato vagliato e classificato mediante il metodo **MoSCoW** (Must, Should, Could, Won't have), garantendo un periodo previsto di sviluppo coerente con le tempistiche accademiche.
 
-* **Etnografia (Auto-osservazione):** poiché i membri del team sono utilizzatori quotidiani di strumenti di studio in ambito universitario, è stata applicata una forma di auto-osservazione etnografica. Questo ha permesso di far emergere esigenze tacite e abitudini consolidate che un'analisi puramente teorica avrebbe ignorato.
+* **Etnografia**: poiché i membri del team sono utilizzatori quotidiani di strumenti di studio in ambito universitario, è stata applicata una forma di auto-osservazione. Questo ha permesso di far emergere esigenze tacite e abitudini consolidate che un'analisi puramente teorica avrebbe ignorato.
 
 * **Analisi di scenario:** è stata simulata l'interazione dell'utente con il sistema attraverso scenari d'uso concreti. Tale tecnica ha facilitato la scomposizione delle attività in compiti elementari, guidando la successiva fase di progettazione architetturale e la stesura dei casi d'uso.
 
