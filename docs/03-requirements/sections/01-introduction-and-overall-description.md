@@ -16,7 +16,7 @@ La presente sezione del documento definisce le specifiche funzionali del sistema
 
 
 
-### Glossario
+#### Glossario
 
 Il presente glossario contiene le definizioni di termini tecnici di dominio utilizzati all'interno del documento di specifica dei requisiti.
 
