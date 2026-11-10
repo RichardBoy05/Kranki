@@ -113,7 +113,7 @@ La definizione dei requisiti è il risultato di un processo iterativo e multi-me
 
 #### Documentazione UML: diagrammi dei casi d'uso
 
-Per la modellazione dinamica e strutturale del sistema sono stati utilizzati i diagrammi UML standard (Casi d'Uso, Classi, State Machine). La documentazione grafica prodotta è disponibile ai seguenti riferimenti:
+Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni diagrammi dei casi d’uso, consultabili ai seguenti link.
 
 
 
