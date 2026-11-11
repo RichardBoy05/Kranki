@@ -71,7 +71,7 @@
 											"top": 159,
 											"width": 1303,
 											"height": 13,
-											"text": "Gestione Delle Flashcard"
+											"text": "Gestione delle Flashcard"
 										},
 										{
 											"_type": "LabelView",
@@ -6070,7 +6070,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Gestione Delle Flashcard"
+					"name": "Gestione delle Flashcard"
 				},
 				{
 					"_type": "UMLActor",
