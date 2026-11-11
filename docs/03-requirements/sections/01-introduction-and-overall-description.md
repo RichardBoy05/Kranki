@@ -22,77 +22,40 @@ Il seguente glossario contiene le definizioni dei termini tecnici di dominio uti
 
 
 
-| Termine | Descrizione |
-
-| :--- | :--- |
-
-| **Archiviazione** | Stato di sospensione di un mazzo che ne interrompe la generazione di scadenze pur mantenendolo consultabile. |
-
-| **Browser** | Interfaccia a elenco o tabella per la gestione e l'ordinamento delle flashcard di un mazzo. |
-
-| **Carta Invertita** | Tipologia di flashcard che genera logicamente due sensi di studio: fronte → retro e retro → fronte. |
-
-| **Cloze** | Tipologia di flashcard avanzata basata su un testo con lacune da riempire. |
-
-| **CORE** | Modulo architettonico dedicato alla logica di business e alle regole di dominio. |
-
-| **CRUD** | Acronimo per *Create, Read, Update, Delete*: le operazioni fondamentali di gestione dei dati. |
-
-| **DB** | Modulo architettonico dedicato all'accesso ai dati e alla loro persistenza. |
-
-| **Due Date** | Data di scadenza calcolata dal sistema per il prossimo ripasso di una flashcard. |
-
-| **Exam Mode** | Algoritmo di compressione delle scadenze che impone la revisione di tutte le carte entro una data limite fissa. |
-
-| **Flag** | Marcatore visivo applicabile a una flashcard per evidenziarla. |
-
-| **Flashcard** | L'unità base di studio dell'applicazione. |
-
-| **Fronte** | La faccia della flashcard contenente il quesito o lo stimolo. |
-
-| **FSRS** | Algoritmo avanzato di scheduling basato su modelli di memoria a lungo termine. |
-
-| **GUI / UI** | Modulo architettonico dedicato all'interfaccia di presentazione visiva. |
-
-| **Image Occlusion** | Tipologia di flashcard in cui porzioni di un'immagine vengono oscurate vettorialmente. |
-
-| **LaTeX** | Linguaggio di markup utilizzato per il rendering di formule matematiche. |
-
-| **Markdown** | Linguaggio di markup leggero utilizzato per la formattazione avanzata del testo. |
-
-| **Mazzo** | Contenitore logico che raggruppa una specifica collezione di flashcard. |
-
-| **Milestone** | Traguardo sbloccabile in base alle statistiche di studio. |
-
-| **Reset** | Azione di azzeramento completo dello storico dei progressi di una flashcard. |
-
-| **Retro** | La faccia della flashcard contenente la soluzione. |
-
-| **Rollover** | Orario di sistema che determina lo scatto al "nuovo giorno" ai fini del calcolo delle scadenze. |
-
-| **Seppellimento** | Esclusione temporanea di una flashcard dalla sessione di studio, limitata alla giornata in corso. |
-
-| **Sessione di Studio** | Processo attivo in cui l'utente valuta in sequenza una coda di flashcard in scadenza. |
-
-| **Set Due Date** | Forzatura manuale della data di scadenza di una flashcard, ignorando il calcolo algoritmico. |
-
-| **Skip** | Spostamento di una flashcard in fondo alla coda della sessione odierna, posticipandone la valutazione. |
-
-| **SM-2** | Algoritmo matematico standard per il calcolo della spaced repetition. |
-
-| **Sospensione** | Esclusione a tempo indeterminato di una flashcard, fino a riattivazione manuale. |
-
-| **Spaced Repetition** | Tecnica di apprendimento che programma i ripassi a intervalli temporali crescenti. |
-
-| **Streak** | Contatore che traccia i giorni consecutivi in cui l'utente ha effettuato almeno una sessione di studio. |
-
-| **Tag** | Etichetta testuale applicabile a una flashcard per agevolarne la classificazione. |
-
-| **Type in the Answer** | Tipologia di flashcard che richiede l'inserimento esplicito della risposta tramite tastiera. |
-
-| **Undo/Redo** | Sistema globale di annullamento e ripristino delle azioni di sistema effettuate. |
-
-
+| Termine            | Descrizione                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| *Archiviazione*      | Stato di un mazzo che ne interrompe la generazione delle scadenze, mantenendolo consultabile.    |
+| *Browser*            | Interfaccia per consultare, ricercare e gestire le *Flashcard* di uno o più mazzi.                     |
+| *Carta Invertita*    | Tipologia di *Flashcard* studiabile in entrambe le direzioni: fronte → retro e retro → fronte.             |
+| *Cloze*              | Tipologia di *Flashcard* basata su un testo con una o più lacune da completare.                                      |
+| *CORE*               | Modulo architettonico dedicato alla logica applicativa e alle regole di dominio.                                |
+| *CRUD*               | Acronimo per Create, Read, Update, Delete: le operazioni fondamentali di gestione dei dati.                     |
+| *DB*                 | Modulo architettonico dedicato all'accesso ai dati e alla loro persistenza.                                     |                           |
+| *Exam Mode*          | Algoritmo avanzato di compressione delle scadenze, che impone la revisione di tutte le *Flashcard* entro una data limite fissa. |
+| *Flag*               | Marcatore visivo utilizzabile per evidenziare una *Flashcard*.                                                  |
+| *Flashcard*          | L'unità base di studio dell'applicazione.                                                                       |
+| *Fronte*             | La parte della *Flashcard* contenente la domanda.                                                   |
+| *FSRS*               | Algoritmo avanzato di *Spaced Repetition* basato su un modello matematico della memoria per ottimizzare gli intervalli di ripasso.                                  |
+| *UI*           | Modulo architettonico dedicato all'interfaccia grafica.                                         |
+| *Image Occlusion*    | Tipologia di *Flashcard* che verifica il riconoscimento di porzioni nascoste di un'immagine.                          |
+| *LaTeX*              | Linguaggio di markup utilizzato per il rendering di formule matematiche.                                        |
+| *Markdown*           | Linguaggio di markup utilizzato per la formattazione avanzata del testo.                                |
+| *Mazzo*              | Contenitore logico che raggruppa una specifica collezione di *Flashcard*.                                         |
+| *Milestone*          | Traguardo sbloccabile in base alle statistiche di studio.                                                       |
+| *Reset*              | Azione che azzera i progressi registrati per una *Flashcard*.                                    |
+| *Retro*              | La parte della *Flashcard* contenente la soluzione.                                                              |
+| *Rollover*           | Orario di sistema che determina lo scatto al "nuovo giorno" ai fini del calcolo delle scadenze.                 |
+| *Seppellimento*      | Esclusione temporanea di una *Flashcard* dalla sessione di studio, limitata alla giornata in corso.               |
+| *Sessione di studio* | Attività in cui l'utente ripassa una sequenza di *Flashcard* selezionate dal sistema.                           |
+| *Set Due Date*       | Forzatura manuale della data di scadenza di una *Flashcard*, sovrascrivendo il calcolo algoritmico.                    |
+| *Skip*               | Spostamento di una *Flashcard* in fondo alla coda della sessione odierna, rimandandone il ripasso.          |
+| *SM-2*               | Algoritmo di *Spaced Repetition* alla base del sistema di ripasso dell'applicazione.                                           |
+| *Sospensione*        | Esclusione a tempo indeterminato di una *Flashcard*, fino a riattivazione manuale.                                |
+| *Spaced Repetition*  | Tecnica di apprendimento che distribuisce i ripassi a intervalli temporali crescenti.                              |
+| *Streak*             | Contatore dei giorni consecutivi in cui viene registrata una specifica attività nell'applicazione.         |
+| *Tag*                | Etichetta testuale applicabile a una *Flashcard* per agevolarne la classificazione.                               |
+| *Type in the Answer* | Tipologia di *Flashcard* che richiede la digitazione manuale della risposta.                    |
+| *Undo/Redo*          | Sistema che consente di annullare e ripristinare le azioni eseguite.                                |
 
 ### 3.1.2 Descrizione generale
 
@@ -115,11 +78,8 @@ La definizione dei requisiti è il risultato di un processo iterativo e multi-me
 
 Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni diagrammi dei casi d’uso, consultabili ai seguenti link.
 
-
-
-* **Diagrammi UML:** [Link al repository/cartella StarUML]
-* **Casi d'Uso (Overview):**
-    * [Placeholder: Inserire qui il Diagramma Casi d'Uso — Libreria]
-    * [Placeholder: Inserire qui il Diagramma Casi d'Uso — Sessione di Studio]
-    * [Placeholder: Inserire qui il Diagramma Casi d'Uso — Sistema e Impostazioni]
-
+| Casi d'uso | StarUML |
+| :--- | :--- |
+| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
+| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
+| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
