@@ -9341,6 +9341,301 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAGhwTzRrALWq0g="
 							}
+						},
+						{
+							"_type": "UMLUseCaseView",
+							"_id": "AAAAAAGhy2qsuSAyoMg=",
+							"_parent": {
+								"$ref": "AAAAAAGhtowGOvBsWcc="
+							},
+							"model": {
+								"$ref": "AAAAAAGhy2qsuCAwsQg="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAGhy2qsuSAzSaY=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGhy2qsuSA0R7A=",
+											"_parent": {
+												"$ref": "AAAAAAGhy2qsuSAzSaY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -256,
+											"top": -64,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGhy2qsuSA125c=",
+											"_parent": {
+												"$ref": "AAAAAAGhy2qsuSAzSaY="
+											},
+											"font": "Arial;13;1",
+											"left": 2529,
+											"top": 1467.5,
+											"width": 162,
+											"height": 13,
+											"text": "Impostare limiti giornalieri"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGhy2qsuSA2V3Q=",
+											"_parent": {
+												"$ref": "AAAAAAGhy2qsuSAzSaY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -256,
+											"top": -64,
+											"width": 73.67724609375,
+											"height": 13,
+											"text": "(from Model)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGhy2qsuSA3YHY=",
+											"_parent": {
+												"$ref": "AAAAAAGhy2qsuSAzSaY="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": -256,
+											"top": -64,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 2524,
+									"top": 1460.5,
+									"width": 172.5380859375,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAGhy2qsuSA0R7A="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAGhy2qsuSA125c="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAGhy2qsuSA2V3Q="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAGhy2qsuSA3YHY="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAGhy2qsuSA4dGY=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -128,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAGhy2qsuSA54uY=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -128,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAGhy2qsuSA6ClM=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -128,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAGhy2qsuiA7Vb0=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -128,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLExtensionPointCompartmentView",
+									"_id": "AAAAAAGhy2qsuiA8JgI=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2qsuSAyoMg="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2qsuCAwsQg="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": -128,
+									"top": -32,
+									"width": 10,
+									"height": 10
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 2488,
+							"top": 1456,
+							"width": 244,
+							"height": 35,
+							"showProperty": false,
+							"nameCompartment": {
+								"$ref": "AAAAAAGhy2qsuSAzSaY="
+							},
+							"suppressAttributes": true,
+							"suppressOperations": true,
+							"attributeCompartment": {
+								"$ref": "AAAAAAGhy2qsuSA4dGY="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAGhy2qsuSA54uY="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAGhy2qsuSA6ClM="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAGhy2qsuiA7Vb0="
+							},
+							"extensionPointCompartment": {
+								"$ref": "AAAAAAGhy2qsuiA8JgI="
+							}
+						},
+						{
+							"_type": "UMLGeneralizationView",
+							"_id": "AAAAAAGhy2rkvTnhYx8=",
+							"_parent": {
+								"$ref": "AAAAAAGhtowGOvBsWcc="
+							},
+							"model": {
+								"$ref": "AAAAAAGhy2rkvTnf4eU="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGhy2rkvTniw4U=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2rkvTnf4eU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 2449,
+									"top": 1446,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGhy2rkvjnjs+A=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2rkvTnf4eU="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 2446,
+									"top": 1461,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGhy2rkvjnkdms=",
+									"_parent": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"model": {
+										"$ref": "AAAAAAGhy2rkvTnf4eU="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 2456,
+									"top": 1417,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAGhy2rkvTnhYx8="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAGhtrBqDOvTQYE="
+							},
+							"tail": {
+								"$ref": "AAAAAAGhy2qsuSAyoMg="
+							},
+							"lineStyle": 1,
+							"points": "2528:1455;2378:1421",
+							"showVisibility": true,
+							"showProperty": false,
+							"nameLabel": {
+								"$ref": "AAAAAAGhy2rkvTniw4U="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAGhy2rkvjnjs+A="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAGhy2rkvjnkdms="
+							}
 						}
 					]
 				},
@@ -11201,6 +11496,29 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "Ripristinare operazione eseguita"
+				},
+				{
+					"_type": "UMLUseCase",
+					"_id": "AAAAAAGhy2qsuCAwsQg=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Impostare limiti giornalieri",
+					"ownedElements": [
+						{
+							"_type": "UMLGeneralization",
+							"_id": "AAAAAAGhy2rkvTnf4eU=",
+							"_parent": {
+								"$ref": "AAAAAAGhy2qsuCAwsQg="
+							},
+							"source": {
+								"$ref": "AAAAAAGhy2qsuCAwsQg="
+							},
+							"target": {
+								"$ref": "AAAAAAGhtrBqC+vRdGo="
+							}
+						}
+					]
 				}
 			]
 		}
