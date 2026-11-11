@@ -12,13 +12,13 @@ Kranki è un'applicazione dedicata allo studio tramite *flashcard*, progettata p
 
 
 
-La presente sezione del documento definisce le specifiche funzionali del sistema. L'ingegneria dei requisiti è stata condotta adottando i principi dello standard **IEEE 830**, al fine di garantire una comunicazione chiara, univoca e verificabile tra il team di sviluppo e gli stakeholder.
+La presente sezione del documento definisce le specifiche funzionali del sistema. La specifica dei requisiti è stata redatta in conformità con i principi dello standard **IEEE 830**, al fine di ridurre possibili ambiguità interpretative tra il team di sviluppo e gli *stakeholder*.
 
 
 
-### Glossario
+#### Glossario
 
-Il presente glossario contiene le definizioni di termini tecnici di dominio utilizzati all'interno del documento di specifica dei requisiti.
+Il seguente glossario contiene le definizioni dei termini tecnici di dominio utilizzati nella specifica dei requisiti.
 
 
 
@@ -98,23 +98,22 @@ Il presente glossario contiene le definizioni di termini tecnici di dominio util
 
 
 
-La definizione dei requisiti di Kranki è il risultato di un processo iterativo e multi-metodologico, volto a minimizzare l'incertezza progettuale e garantire che ogni funzionalità risponda a esigenze concrete. Il team ha integrato diverse tecniche di elicitazione per coprire sia gli aspetti funzionali che quelli legati alla qualità dell'esperienza d'uso:
+La definizione dei requisiti è il risultato di un processo iterativo e multi-metodologico. Il team ha integrato diverse tecniche di elicitazione per coprire sia gli aspetti funzionali che quelli legati alla qualità dell'esperienza d'uso.
 
 
 
-* **Analisi di sistemi esistenti:** è stata condotta un'analisi comparativa dei software di *spaced repetition* esistenti, con particolare focus su Anki. Tale approccio ha permesso di derivare il set di requisiti funzionali di base e di identificare le criticità strutturali sulle quali intervenire con soluzioni migliorative.
+* **Derivazione da un sistema esistente**: è stata condotta un'analisi comparativa dei software di *Spaced Repetition* esistenti, con particolare focus su Anki. Tale approccio ha permesso di derivare il set di requisiti funzionali di base e di identificare potenziali criticità sulle quali intervenire con soluzioni migliorative.
 
-* **Brainstorming:** il team ha organizzato sessioni collaborative per far emergere idee e funzionalità innovative. Ogni requisito è stato vagliato e classificato mediante il metodo **MoSCoW** (Must, Should, Could, Won't have), garantendo un periodo previsto di sviluppo coerente con le tempistiche accademiche.
+* **Brainstorming**: il team ha organizzato sessioni di gruppo per far emergere idee e funzionalità innovative. In particolare, ciascun requisito è stato classificato mediante il metodo **MoSCoW**.
 
-* **Etnografia (Auto-osservazione):** poiché i membri del team sono utilizzatori quotidiani di strumenti di studio in ambito universitario, è stata applicata una forma di auto-osservazione etnografica. Questo ha permesso di far emergere esigenze tacite e abitudini consolidate che un'analisi puramente teorica avrebbe ignorato.
-
-* **Analisi di scenario:** è stata simulata l'interazione dell'utente con il sistema attraverso scenari d'uso concreti. Tale tecnica ha facilitato la scomposizione delle attività in compiti elementari, guidando la successiva fase di progettazione architetturale e la stesura dei casi d'uso.
+* **Etnografia**: poiché i membri del team sono utilizzatori quotidiani di strumenti di studio in ambito universitario, è stata applicata una forma di auto-osservazione. Questo ha permesso di far emergere esigenze tacite e abitudini consolidate che un'analisi puramente teorica avrebbe ignorato.
 
 
 
-### Modelli e documentazione di supporto
 
-Per la modellazione dinamica e strutturale del sistema sono stati utilizzati i diagrammi UML standard (Casi d'Uso, Classi, State Machine). La documentazione grafica prodotta è disponibile ai seguenti riferimenti:
+#### Documentazione UML: diagrammi dei casi d'uso
+
+Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni diagrammi dei casi d’uso, consultabili ai seguenti link.
 
 
 
