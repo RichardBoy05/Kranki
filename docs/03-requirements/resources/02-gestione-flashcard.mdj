@@ -57,7 +57,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 544,
-											"top": 240,
+											"top": 208,
 											"height": 13
 										},
 										{
@@ -68,7 +68,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 453,
-											"top": 159,
+											"top": 143,
 											"width": 1303,
 											"height": 13,
 											"text": "Gestione delle Flashcard"
@@ -82,7 +82,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 544,
-											"top": 240,
+											"top": 208,
 											"width": 73.67724609375,
 											"height": 13,
 											"text": "(from Model)"
@@ -96,14 +96,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": 544,
-											"top": 240,
+											"top": 208,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 448,
-									"top": 152,
+									"top": 136,
 									"width": 1313,
 									"height": 25,
 									"stereotypeLabel": {
@@ -122,7 +122,7 @@
 							],
 							"font": "Arial;13;0",
 							"left": 448,
-							"top": 152,
+							"top": 136,
 							"width": 1313,
 							"height": 1017,
 							"showProperty": false,
@@ -1475,7 +1475,7 @@
 											"top": 1035.5,
 											"width": 156,
 											"height": 13,
-											"text": "Creare flashcard invertita"
+											"text": "Creare \"Carta Invertita\""
 										},
 										{
 											"_type": "LabelView",
@@ -1508,7 +1508,7 @@
 									"font": "Arial;13;0",
 									"left": 1034.5,
 									"top": 1028.5,
-									"width": 166.79345703125,
+									"width": 166,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGhwXf9KoLfwB8="
@@ -1671,11 +1671,11 @@
 												"$ref": "AAAAAAGhwXhv+IR6Mgw="
 											},
 											"font": "Arial;13;1",
-											"left": 1157,
+											"left": 1160,
 											"top": 971.5,
-											"width": 221,
+											"width": 236,
 											"height": 13,
-											"text": "Creare flashcard \"digita la risposta\""
+											"text": "Creare flashcard \"Type in the Answer\""
 										},
 										{
 											"_type": "LabelView",
@@ -1706,9 +1706,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 1152,
+									"left": 1155,
 									"top": 964.5,
-									"width": 231.8505859375,
+									"width": 246.77392578125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGhwXhv+IR7Ljc="
@@ -1808,7 +1808,7 @@
 							"containerChangeable": true,
 							"left": 1104,
 							"top": 960,
-							"width": 327,
+							"width": 348,
 							"height": 35,
 							"showProperty": false,
 							"nameCompartment": {
@@ -2555,7 +2555,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -320,
+											"left": -336,
 											"top": 400,
 											"height": 13
 										},
@@ -2566,11 +2566,11 @@
 												"$ref": "AAAAAAGhwXyQC5DDd8s="
 											},
 											"font": "Arial;13;1",
-											"left": 550.5,
+											"left": 542.5,
 											"top": 475.5,
 											"width": 151,
 											"height": 13,
-											"text": "Reinizializzare progressi"
+											"text": "Reset flashcard"
 										},
 										{
 											"_type": "LabelView",
@@ -2580,7 +2580,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -320,
+											"left": -336,
 											"top": 400,
 											"width": 73.67724609375,
 											"height": 13,
@@ -2594,16 +2594,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -320,
+											"left": -336,
 											"top": 400,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 545.5,
+									"left": 537.5,
 									"top": 468.5,
-									"width": 161.7216796875,
+									"width": 161,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGhwXyQC5DErX8="
@@ -2629,8 +2629,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -160,
-									"top": 200,
+									"left": -168,
+									"top": 192,
 									"width": 10,
 									"height": 10
 								},
@@ -2645,8 +2645,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -160,
-									"top": 200,
+									"left": -168,
+									"top": 192,
 									"width": 10,
 									"height": 10
 								},
@@ -2661,8 +2661,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -160,
-									"top": 200,
+									"left": -168,
+									"top": 192,
 									"width": 10,
 									"height": 10
 								},
@@ -2677,8 +2677,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -160,
-									"top": 200,
+									"left": -168,
+									"top": 192,
 									"width": 10,
 									"height": 10
 								},
@@ -2693,15 +2693,15 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -160,
-									"top": 200,
+									"left": -168,
+									"top": 192,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 512,
+							"left": 504,
 							"top": 464,
 							"width": 228,
 							"height": 35,
@@ -2748,7 +2748,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 781,
+									"left": 777,
 									"top": 525,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2769,7 +2769,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 787,
+									"left": 783,
 									"top": 511,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2790,7 +2790,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 770,
+									"left": 766,
 									"top": 552,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2809,7 +2809,7 @@
 								"$ref": "AAAAAAGhwXyQC5DCSa4="
 							},
 							"lineStyle": 1,
-							"points": "668:499;885:591",
+							"points": "661:499;884:591",
 							"showVisibility": true,
 							"showProperty": false,
 							"nameLabel": {
@@ -3033,8 +3033,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1150,
-									"top": 918,
+									"left": 1155,
+									"top": 919,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -3054,8 +3054,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1142,
-									"top": 931,
+									"left": 1148,
+									"top": 932,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -3075,8 +3075,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1165,
-									"top": 893,
+									"left": 1170,
+									"top": 892,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -3094,7 +3094,7 @@
 								"$ref": "AAAAAAGhwXhv+IR5SFs="
 							},
 							"lineStyle": 1,
-							"points": "1237:959;1080:866",
+							"points": "1245:959;1082:866",
 							"showVisibility": true,
 							"showProperty": false,
 							"nameLabel": {
@@ -5092,7 +5092,7 @@
 											"top": 267.5,
 											"width": 180,
 											"height": 13,
-											"text": "Impostare scadenza manuale"
+											"text": "Set Due Date"
 										},
 										{
 											"_type": "LabelView",
@@ -5125,7 +5125,7 @@
 									"font": "Arial;13;0",
 									"left": 943.5,
 									"top": 260.5,
-									"width": 190.62890625,
+									"width": 190,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGhwZx4hNALmKc="
@@ -5938,7 +5938,7 @@
 							"top": 608,
 							"width": 185,
 							"height": 81,
-							"text": "Condition: {schermata anteprima non attiva}\n\nextension point: Compilazione contenuto"
+							"text": "Condition: {schermata anteprima non attiva, e utente richiede di attivarla}\n\nextension point: Compilazione contenuto"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -6382,7 +6382,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Creare flashcard invertita",
+					"name": "Creare \"Carta Invertita\"",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -6405,7 +6405,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Creare flashcard \"digita la risposta\"",
+					"name": "Creare flashcard \"Type in the Answer\"",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -6555,7 +6555,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Reinizializzare progressi",
+					"name": "Reset flashcard",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",
@@ -6729,7 +6729,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Impostare scadenza manuale",
+					"name": "Set Due Date",
 					"ownedElements": [
 						{
 							"_type": "UMLGeneralization",

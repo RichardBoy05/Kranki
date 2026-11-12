@@ -71,7 +71,7 @@
 											"top": 1263,
 											"width": 999,
 											"height": 13,
-											"text": "Gestione Account Dati e Mazzi"
+											"text": "Gestione Sistema e Mazzi"
 										},
 										{
 											"_type": "LabelView",
@@ -9645,7 +9645,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Gestione Account Dati e Mazzi"
+					"name": "Gestione Sistema e Mazzi"
 				},
 				{
 					"_type": "UMLActor",
