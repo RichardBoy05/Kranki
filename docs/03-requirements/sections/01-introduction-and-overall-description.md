@@ -40,7 +40,7 @@ Il seguente glossario contiene le definizioni dei termini tecnici di dominio uti
 | *Markdown*           | Linguaggio di markup utilizzato per la formattazione avanzata del testo.                                |
 | *Mazzo*              | Contenitore logico che raggruppa una specifica collezione di *Flashcard*.                                         |
 | *Milestone*          | Traguardo sbloccabile in base alle statistiche di studio.                                                       |
-| *Nuova Flashcard*:   | *Flashcard* non ancora sottoposta alla prima revisione da parte dell'utente.                                                       |
+| *Nuova Flashcard*   | *Flashcard* non ancora sottoposta alla prima revisione da parte dell'utente.                                                       |
 | *Reset*              | Azione che azzera i progressi registrati per una *Flashcard*.                                    |
 | *Retro*              | La parte della *Flashcard* contenente la soluzione.                                                              |
 | *Rollover*           | Orario di sistema che determina lo scatto al "nuovo giorno" ai fini del calcolo delle scadenze.                 |
@@ -80,6 +80,6 @@ Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni
 
 | Casi d'uso | StarUML |
 | :--- | :--- |
-| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
-| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
-| [Titolo del caso d'uso](https://markdownlivepreview.com/) | [Titolo del caso d'uso](https://markdownlivepreview.com/) |
+| [Gestione del sistema e dei _Mazzi_](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/01-gestione-account-dati-mazzi.jpg) | [Gestione del sistema e dei _Mazzi_](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/01-gestione-account-dati-mazzi.mdj) |
+| [Gestione delle _Flashcard_](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/02-gestione-flashcard.jpg) | [Gestione delle _Flashcard_](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/02-gestione-flashcard.mdj) |
+| [_Sessione di studio_, statistiche e gamification](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/03-sessione-studio-statistiche-gamification.jpg) | [_Sessione di studio_, statistiche e gamification](https://github.com/RichardBoy05/Kranki/blob/main/docs/03-requirements/resources/03-sessione-studio-statistiche-gamification.mdj) |
