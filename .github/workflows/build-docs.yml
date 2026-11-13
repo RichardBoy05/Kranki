@@ -1,0 +1,48 @@
+name: Build Unified Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - ".github/scripts/build_docs.py"
+      - ".github/workflows/build-docs.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-docs:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DOCS_DEPLOY_KEY }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build documentation files
+        run: python3 .github/scripts/build_docs.py
+
+      - name: Commit and push updated documentation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica alla documentazione generata."
+            exit 0
+          fi
+          git commit -m "docs: rebuild unified documentation [skip ci]"
+          git push
