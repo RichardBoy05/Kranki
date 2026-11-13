@@ -44,5 +44,5 @@ jobs:
             echo "Nessuna modifica alla documentazione generata."
             exit 0
           fi
-          git commit -m "docs: rebuild unified documentation [skip ci]"
+          git commit -m "[BOT] Aggiornamento automatico della documentazione [skip ci]"
           git push
