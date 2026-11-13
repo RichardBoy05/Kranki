@@ -1,5 +1,3 @@
-# 1. Project Plan
-
 ## 1.1 Introduzione
 
 ### 1.1.1 Contesto del progetto
