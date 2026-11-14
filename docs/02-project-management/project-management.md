@@ -1,3 +1,13 @@
+<!-- AUTO-GENERATED FILE: DO NOT EDIT MANUALLY -->
+
+# 2. Gestione del progetto
+
+**Storico delle versioni**
+
+| Versione | Data | Autori | Descrizione delle modifiche |
+| :--- | :--- | :--- | :--- |
+| **1.0** | 04/11/2026 | Pullano Gabriele | Redazione della prima versione completa del documento *Gestione del progetto*. |
+
 ## 2.1 Ciclo di vita del software
 
 ### 2.1.1 Processo di sviluppo

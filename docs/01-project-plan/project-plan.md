@@ -1,3 +1,13 @@
+<!-- AUTO-GENERATED FILE: DO NOT EDIT MANUALLY -->
+
+# 1. Project Plan
+
+**Storico delle versioni**
+
+| Versione | Data | Autori | Descrizione delle modifiche |
+| :--- | :--- | :--- | :--- |
+| **1.0** | 21/10/2026 | Berardi Francesco, Meoli Richard, Pullano Gabriele, Rapetti Giorgio | Redazione della prima versione completa del *Project Plan*. |
+
 ## 1.1 Introduzione
 
 ### 1.1.1 Contesto del progetto
@@ -17,8 +27,6 @@ L'idea alla base del progetto nasce dall'esperienza diretta del team come studen
 ### 1.1.4 Obiettivi del progetto
 Per colmare questo divario nasce **Kranki**, un ambiente di studio basato su *flashcard* concepito per adattarsi alle esigenze universitarie e implementato come applicazione Java Desktop. Pur traendo ispirazione da soluzioni open-source consolidate come Anki, l'obiettivo primario del sistema è quello di fornire un motore di *Spaced Repetition* che introduca logiche di scheduling adattive, progettate per ricalibrare i cicli di revisione in funzione di scadenze temporali rigide imposte dall'utente. A questo obiettivo si affiancherà l'integrazione di meccaniche a supporto della costanza nello studio giornaliero, attraverso elementi di tracciamento dell'attività e gratificazione volti a sostenere la motivazione dello studente.
 
-
-
 ## 1.2 Modello di processo
 
 ### 1.2.1 Approccio metodologico
@@ -30,7 +38,6 @@ L'evoluzione del progetto è strutturata secondo le quattro macro-fasi previste 
 * ***Elaboration* (Elaborazione):** fase incentrata sulla progettazione architetturale e sulla modellazione orientata agli oggetti. I diagrammi UML fungeranno da documentazione e linea guida per lo sviluppo. Verrà inoltre effettuata una parziale adozione del paradigma *Model-Driven Architecture* (MDA), utilizzata come supporto iniziale per generare automaticamente lo scheletro di alcune classi strutturali.
 * ***Construction* (Costruzione):** fase operativa in cui avviene la stesura manuale del codice sorgente. Il processo abbandona l'impostazione sequenziale per adottare dinamiche fortemente iterative governate da *Scrum*: lo sviluppo avverrà tramite cicli brevi (*Sprint*), al termine dei quali verranno prodotti incrementi di software tangibili e funzionanti.
 * ***Transition* (Transizione):** fase conclusiva del ciclo di vita, successiva al consolidamento del codice. Si focalizza sulla validazione complessiva dell'applicativo, sul *bug fixing* finale e sull'ottimizzazione del prodotto e della documentazione in vista della consegna.
-
 
 ## 1.3 Organizzazione del progetto
 
@@ -44,8 +51,6 @@ Questo capitolo descrive l'organizzazione generale del progetto, definendo i rap
 ### 1.3.2 Organizzazione interna del team
 
 Il gruppo di sviluppo è strutturato secondo il modello **Scrum**, composto da *developer* alla pari. La figura dello *Scrum Master* è ricoperta direttamente da uno degli sviluppatori, Giorgio Rapetti.
-
-
 
 ## 1.4 Standard, linee guida, procedure
 
@@ -64,8 +69,6 @@ Per la gestione del repository GitHub il team adotta l'approccio *Feature Branch
 
 ### 1.4.4 Linee guida per i commit
 Per garantire la leggibilità e l'ispezionabilità della cronologia del repository, i messaggi di commit devono essere mantenuti sintetici e strettamente descrittivi dell'azione svolta, fornendo un riepilogo immediato delle modifiche applicate.
-
-
 
 ## 1.5 Attività di gestione
 
@@ -102,8 +105,6 @@ Un aspetto centrale dell'attività di gestione consiste nel continuo bilanciamen
 \
 In caso di scostamenti rispetto alla pianificazione originaria o di criticità nello sviluppo, la gestione interviene operando uno snellimento dinamico dello *Sprint Backlog*. Ciò si traduce nella de-prioritizzazione o posticipazione delle attività secondarie, garantendo che le risorse del team convergano in modo esclusivo verso le funzionalità architetturali, assicurando un rilascio funzionante entro le scadenze concordate.
 
-
-
 ## 1.6 Rischi
 
 Di seguito sono riportati i principali fattori di rischio previsti per il progetto, suddivisi in tre categorie, unitamente alle relative strategie di mitigazione.
@@ -135,8 +136,6 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
     La necessità di conciliare le attività di progetto con gli altri impegni universitari può incidere sulla continuità del lavoro.\
     *Mitigazione:* la pianificazione sarà gestita in modo flessibile, calibrando l'assegnazione dei compiti e le scadenze interne in funzione delle esigenze dei singoli membri.
 
-
-
 ## 1.7 Personale
 
 ### 1.7.1 Dimensionamento e modello operativo
@@ -156,7 +155,6 @@ Tuttavia, al solo fine di ottimizzare il coordinamento tecnico, vengono individu
 * **Gabriele Pullano**: Focus sul modulo *Database*.
 * **Richard Meoli**: Focus sul modulo *UI*.
 
-
 ## 1.8 Metodi e tecniche
 
 Questa sezione descrive le metodologie che il team adotterà durante le diverse fasi del ciclo di vita del software.
@@ -169,8 +167,6 @@ Per definire le funzionalità del sistema, il team adotterà quattro tecniche pr
 
 ### 1.8.2 Progettazione
 La progettazione del sistema si baserà sulla modellazione **UML**.
-
-
 
 ## 1.9 Garanzia di qualità
 
@@ -186,8 +182,6 @@ Per quantificare l'efficacia della suite di collaudo, la misurazione della *Code
 ### 1.9.3 Revisione tra pari
 Gli strumenti automatizzati saranno affiancati da un processo di validazione umana basato sulla *Code Review*. Tale revisione è obbligatoria per ogni *Pull Request* e deve essere rigorosamente effettuata da un membro del team diverso dall'autore delle modifiche. Questa ispezione incrociata agirà come un vero e proprio *Quality Gate* (cancello di qualità), garantendo l'identificazione di difetti logici, concettuali o architetturali che sfuggono alle analisi statiche e assicurando, al contempo, una conoscenza condivisa della *codebase* tra tutti gli sviluppatori.
 
-
-
 ## 1.10 Pacchetti di lavoro
 L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre componenti principali, corrispondenti ad altrettanti progetti Eclipse Maven. Le attività si articolano nei seguenti *Work Packages* (WP).
 
@@ -199,8 +193,6 @@ L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structur
     Dedicato allo sviluppo dell'interfaccia grafica, con l'obiettivo di offrire un'esperienza d'uso semplice e intuitiva. Il modulo dipende sia da `kranki-core` che da `kranki-db`.
 
 Tale ripartizione definisce la struttura e le dipendenze del software, ma non impone una rigida compartimentazione del personale durante lo sviluppo. Il team adotta infatti un modello di lavoro *cross-funzionale*: pur individuando per ciascun membro un'area di focus primario, è prevista una collaborazione trasversale sulle diverse attività.
-
-
 
 ## 1.11 Risorse
 
@@ -216,8 +208,6 @@ Lo sviluppo e il test avverranno sui computer personali dei membri del team.
 * **Tool di modellazione:** StarUML v5.
 * **Database remoto:** Firebase (tier gratuito "*Spark Plan*", sufficiente per l'impiego previsto).
 
-
-
 ## 1.12 Budget e programma
 
 ### 1.12.1 Budget 
@@ -227,13 +217,9 @@ Il budget è pertanto quantificato unicamente in termini di *effort* (ore-uomo).
 ### 1.12.2 Programma
 Come già anticipato nel punto 2 del presente documento, la programmazione temporale del progetto si articolerà seguendo le quattro macro-fasi previste dal framework RUP. Lo sviluppo procederà dall'*Inception* per l'ingegneria dei requisiti, all'*Elaboration* per la progettazione architetturale, per poi passare alla fase operativa di *Construction*, che adotterà cicli iterativi (*Sprint*) per la stesura del codice. Il percorso si concluderà con la *Transition*, dedicata al testing intensivo e alla finalizzazione dei *deliverable* in vista della consegna formale.
 
-
-
 ## 1.13 Cambiamenti
 
 Attualmente non sono presenti variazioni rispetto al piano iniziale. Eventuali modifiche future a requisiti, architettura o tempistiche verranno formalmente documentate all'interno di questa sezione.
-
-
 
 ## 1.14 Consegna
 
