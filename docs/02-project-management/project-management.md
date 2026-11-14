@@ -1,5 +1,3 @@
-# 2. Gestione del progetto
-
 ## 2.1 Ciclo di vita del software
 
 ### 2.1.1 Processo di sviluppo
