@@ -14,6 +14,10 @@
   <name>kranki-app</name>
   <url>https://github.com/RichardBoy05/Kranki</url>
 
+  <properties>
+    <sonar.coverage.exclusions>**/*</sonar.coverage.exclusions>
+  </properties>
+
   <dependencies>
     <dependency>
   	  <groupId>org.junit.jupiter</groupId>
