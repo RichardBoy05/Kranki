@@ -12,32 +12,19 @@
 
   <artifactId>kranki-ui</artifactId>
   <name>kranki-ui</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
-
+  <url>https://github.com/RichardBoy05/Kranki</url>
 
   <dependencies>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- Optionally: parameterized tests support -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <scope>test</scope>
+  	  <groupId>org.junit.jupiter</groupId>
+  	  <artifactId>junit-jupiter</artifactId>
+  	  <scope>test</scope>
     </dependency>
     
-    <!-- Internal dependencies of the Kranki project -->
+    <!-- internal dependency of the Kranki project -->
     <dependency>
       <groupId>it.unibg.kranki</groupId>
       <artifactId>kranki-core</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>it.unibg.kranki</groupId>
-      <artifactId>kranki-db</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
