@@ -7,11 +7,11 @@ La progettazione architetturale di **Kranki** definisce la struttura globale del
 A livello concettuale, l'architettura del sistema è organizzata in tre livelli logici principali — **Presentazione (`kranki-ui`)**, **Logica di Business (`kranki-core`)** e **Persistenza (`kranki-db`)** — le cui relazioni di dipendenza statica e la mappatura rispetto al modello *Model-View-Controller* (MVC) sono rappresentate nello schema seguente.
 
 <p align="center">
- <img src="LINK?raw=true"
+ <img src="https://github.com/RichardBoy05/Kranki/blob/81-redazione-del-documento-sugli-stili-architetturali/docs/04-design/resources/stile_architettonico_kranki.png?raw=true"
  alt="Schema dello stile architettonico">
  </p>
 
-![Schema concettuale dell'architettura di Kranki](docs/04-design/resources/schema-architettura-concettuale.jpg)
+
 
 La tabella seguente formalizza la decisione relativa allo stile architetturale adottato.
 
