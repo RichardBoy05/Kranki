@@ -54,9 +54,45 @@ In accordo con la classificazione formale degli stili architetturali, il sistema
   * **Istanziazione:** creazione iniziale e iniezione delle dipendenze tra i macro-componenti all'avvio dell'applicazione (a carico di `kranki-app`), istanziazione controllata dei controllori grafici in `kranki-ui` e creazione a runtime delle entità di dominio (*Mazzi*, *Flashcard*, *Sessioni di studio*) in `kranki-core`.
   * **Dati condivisi:** accesso allo spazio dati persistente remoto su *Firebase Realtime Database*, condiviso tra sessioni su dispositivi diversi dello stesso utente o tra più utenti nell'ambito dell'eventuale catalogo pubblico dei mazzi.
 
+### 4.1.2 Persistenza dei dati
+
+La tabella seguente riassume le decisioni architetturali principali adottate per la persistenza locale, la sincronizzazione remota e l'autenticazione degli utenti.
+
+| Elemento | Descrizione |
+| :--- | :--- |
+| **Problema** | Garantire autenticazione sicura per singolo utente, persistenza affidabile dei dati con pieno supporto all'utilizzo offline, sincronizzazione multi-dispositivo con gestione dei conflitti e importazione/esportazione su file locale, rispettando i vincoli del corso (servizi cloud ammessi esclusivamente su Firebase, nessun servizio esterno da installare, costi nulli e assenza di percorsi assoluti). |
+| **Decisione** | Adozione di una strategia ibrida basata su **archivio locale su file in formato JSON** (speculare al modello remoto e aggiornato ad ogni modifica significativa) abbinato a **Firebase Authentication** e **Firebase Realtime Database** su piano gratuito **Spark Plan**, integrati tramite **REST API ufficiali** su HTTPS con sincronizzazione esplicita a granularità di singolo *Mazzo*. |
+| **Stato** | Approvato. |
+| **Presupposti** | Assenza di budget finanziario (utilizzo di piani gratuiti senza carta di credito); assenza di un meccanismo di caching offline nativo di Firebase per applicazioni Java Desktop; necessità di garantire piena portabilità dell'applicativo su sistemi operativi eterogenei. |
+| **Alternative** | **1. Sola memoria volatile (RAM) + salvataggio remoto su richiesta:** scartata perché impedirebbe l'avvio e lo studio in assenza di rete, rallenterebbe l'apertura e aumenterebbe inutilmente il consumo di banda.<br>**2. Database relazionale locale (es. SQLite) + Firebase:** scartata per l'elevato onere implementativo dovuto alla gestione simultanea di due modelli dati differenti (relazionale e NoSQL).<br>**3. Cloud Firestore / Firebase SQL Connect / Cloud Storage:** scartati rispettivamente per limiti operativi giornalieri su piano gratuito e formato REST complesso, per la natura temporanea del periodo di prova (90 giorni) e per l'obbligo di piani a pagamento.<br>**4. SDK server `firebase-admin` o librerie JVM non ufficiali:** scartati per incompatibilità di sicurezza lato client, assenza di login utente o immaturità (*alpha*). |
+| **Motivazione** | **1. Unificazione del formato dati:** l'impiego esclusivo del formato JSON consente di usare un unico meccanismo di serializzazione per archivio locale, cloud remoto e operazioni di *Import/Export*.<br>**2. Affidabilità e reattività offline:** il salvataggio locale immediato per singolo *Mazzo* protegge da arresti anomali e garantisce avvio istantaneo e utilizzo completo senza connettività.<br>**3. Adeguatezza di Realtime Database:** assenza di limiti giornalieri sul numero di letture/scritture, payload REST in JSON diretto e soglie molto ampie per singolo nodo.<br>**4. Integrazione sicura e leggera:** le chiamate REST stateless proteggono i dati per singolo utente tramite token senza consumare slot di connessioni simultanee. |
+| **Implicazioni** | Necessità di disaccoppiare logicamente i dati (indici, *Mazzi*, immagini e statistiche) per ottimizzare il consumo della banda mensile gratuita; gestione esplicita della rilevazione e risoluzione dei conflitti tramite marcatori temporali e azzeramento dello storico *Undo/Redo* al *Sync*; ridimensionamento lato client di eventuali immagini per restare nei limiti del piano gratuito. |
+| **Appunti** | Le sottoscelte tecnologiche, l'analisi dei limiti del piano gratuito e i flussi di sincronizzazione e gestione conflitti sono dettagliati nei paragrafi seguenti. |
+
 ---
 
-### 4.1.2 Persistenza dei dati
+#### Piattaforma Firebase, autenticazione e scelta di Realtime Database
+
+In accordo coi vincoli del corso, il sistema utilizza il piano gratuito **Spark Plan**, che non richiede fatturazione e blocca temporaneamente le richieste al raggiungimento delle quote senza addebiti. L'autenticazione è affidata a **Firebase Authentication** (e-mail e password, gratuita fino a 50.000 utenti attivi mensili, esclusi gli SMS), che rilascia un `uid` univoco e token di sessione rinnovabili per isolare i dati di ogni utente tramite regole di sicurezza.
+
+Come database remoto si adotta **Firebase Realtime Database**, scartando:
+* **Firebase SQL Connect:** limitato su Spark a una prova gratuita di 90 giorni prima della sospensione o passaggio al piano a pagamento *Blaze*.
+* **Cloud Firestore:** scartato per i tetti giornalieri rigidi su Spark (50.000 letture e 20.000 scritture/giorno, critici testando *Mazzi* grandi a singolo documento per carta), per il formato REST tipizzato e verboso (a fronte del **JSON puro diretto** di RTDB) e per il limite di 1 MB per documento (contro **10 MB per singola stringa UTF-8** e **256 MB per richiesta REST** in RTDB). I limiti di query di RTDB (un solo ordinamento/filtro lato server) non penalizzano Kranki: *Browser*, filtri e statistiche lavorano in RAM, mentre per l'eventuale catalogo pubblico si scarica in RAM un indice leggero di soli metadati filtrabile lato client.
+
+#### Comunicazione REST e gestione immagini
+
+Non esistendo un SDK client ufficiale Google per Java Desktop, l'integrazione avviene tramite chiamate HTTPS alle **REST API ufficiali** (usando il client HTTP standard Java, anche in modalità asincrona). Sono stati esclusi sia l'SDK server `firebase-admin` (richiede chiavi amministrative segrete non distribuibili in un client, non offre login utente email/password né cache offline) sia librerie JVM di terze parti in stato *alpha*. Le chiamate REST non-*streaming*, essendo *stateless*, non consumano inoltre il limite delle 100 connessioni simultanee di Spark.
+
+Per l'eventuale supporto alle immagini si esclude **Cloud Storage for Firebase**, disponibile solo sul piano a pagamento *Blaze* e basato su una seconda API binaria separata. Eventuali immagini o screenshot vengono ridimensionati lato client (preservando la leggibilità di testi e formule), codificati in **Base64** e salvati su RTDB in nodi separati dalle *Flashcard*, evitando ritrasferimenti nei sync testuali ordinari.
+
+#### Persistenza locale JSON, lavoro offline e sincronizzazione
+
+Poiché il caching offline automatico di Firebase non esiste su Java Desktop (solo su Android/iOS/Web), e scartando sia l'approccio solo-RAM (niente uso offline, avvio lento, spreco di banda) sia un DB relazionale locale (doppio modello SQL/NoSQL), si adotta un **archivio locale su file JSON nello stesso formato di RTDB**. I file risiedono in cartelle isolate per singolo `uid` mediante percorsi portabili relativi all'ambiente utente (nessun percorso assoluto hardcoded, né interferenze tra account diversi sullo stesso PC).
+
+* **Uso ordinario e accesso offline:** dopo un primo login online, i dati minimi di sessione salvati consentono l'accesso anche offline. Letture, ricerche e studio operano rapidamente in **RAM**, mentre **ogni modifica significativa** (su *Mazzi*, *Flashcard*, sessioni di studio e *Undo/Redo*) viene salvata subito sul corrispondente file JSON locale del *Mazzo* (con scrittura sicura anti-corruzione).
+* **Ottimizzazione della banda:** il vero collo di bottiglia di Spark è il limite di 10 GB/mese in download; per ridurne il consumo, indici leggeri con marcatori temporali dei *Mazzi*, contenuti dei singoli *Mazzi*, immagini (scaricate una sola volta) e statistiche mensili sono gestiti separatamente, trasferendo solo ciò che è effettivamente variato.
+* **Sync esplicito, conflitti (`REQ-03`), *Undo/Redo* (`REQ-24`) e *Import/Export* (`REQ-04`):** la sincronizzazione avviene su comando esplicito a granularità di **singolo *Mazzo*** confrontando i marcatori temporali rispetto all'ultimo sync (gestendo anche eliminazioni offline); in caso di modifiche concorrenti su entrambi i lati, l'utente sceglie se mantenere la versione locale o ripristinare la remota (con fallback semplice *Last-Write-Wins*). Lo storico *Undo/Redo* opera solo in RAM sulla sessione corrente (riallineando il file locale quando invocato) e si **azzera** al Sync remoto o alla chiusura. Infine, *Import/Export* riutilizza lo stesso meccanismo di serializzazione JSON su file portabili (o archivi compressi se con immagini), azzerando i progressi personali nelle esportazioni condivisibili.
+
 
 ### 4.1.3 Interfaccia grafica
 
