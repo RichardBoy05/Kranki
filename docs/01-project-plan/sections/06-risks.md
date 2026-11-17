@@ -15,7 +15,7 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
 
 *   **Conflitti di sincronizzazione multi-dispositivo**\
     La modifica concorrente dei dati su dispositivi diversi comporta il rischio di conflitti durante la sincronizzazione con il database remoto.\
-    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà al comportamento predefinito di Firebase, accettando l'eventuale rischio di sovrascrittura.
+    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà a una semplice politica di sovrascrittura esplicita (es. *Last-Write-Wins* basata su timestamp), accettando l'eventuale rischio di sovrascrittura.
 *   **Sviluppo dell'interfaccia grafica**\
     L'implementazione di elementi grafici complessi, come un editor di testo avanzato, presenta difficoltà realizzative non trascurabili.\
     *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà a una semplice politica di sovrascrittura esplicita (es. *Last-Write-Wins* basata su timestamp), accettando l'eventuale rischio di sovrascrittura.
