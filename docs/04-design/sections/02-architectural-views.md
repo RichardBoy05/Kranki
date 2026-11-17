@@ -19,7 +19,7 @@ Rappresenta il comportamento dinamico del sistema in fase di esecuzione, focaliz
 * Diagramma di comunicazione: [link immagine](), [link file]()
 
 #### Punto di vista della distribuzione
-Illustra la topologia fisica del sistema, definendo le modalità con cui gli artefatti software e i processi vengono allocati sui rispettivi nodi fisici di esecuzione.
+Descrive l'architettura fisica del sistema, illustrando come gli artefatti software vengono distribuiti e allocati sui rispettivi nodi di esecuzione.
 * Diagramma di deployment: [link immagine](), [link file]()
 
 #### Punto di vista degli scenari (+1)
