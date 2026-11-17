@@ -10,7 +10,7 @@ Descrive il sistema sotto il profilo concettuale, evidenziando gli elementi di p
 #### Punto di vista dell'implementazione
 Fornisce una visione statica orientata agli sviluppatori e alla gestione del codice sorgente, illustrando la scomposizione del sistema in termini di moduli, pacchetti e livelli architetturali.
 * Diagramma dei componenti: [link immagine](), [link file]()
-* Diagramma dei pacchetti: [link immagine](), [link file]()
+* Diagramma dei package: [link immagine](), [link file]()
 
 #### Punto di vista del processo
 Rappresenta il comportamento dinamico del sistema in fase di esecuzione, focalizzandosi sul flusso delle attività, sui processi e sulle dinamiche di interazione e comunicazione temporale tra gli oggetti.
