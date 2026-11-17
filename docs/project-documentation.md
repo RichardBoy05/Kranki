@@ -435,3 +435,25 @@ Questa categoria valuta l'adattabilità del software ai cambiamenti ambientali e
 
 * **Riutilizzabilità**: l'architettura del software deve consentire il riuso dei suoi componenti in contesti operativi differenti, come ad esempio in future trasposizioni in ambito *mobile*.\
   *Verificabilità*: netta separazione architetturale in progetti Maven indipendenti. I moduli `kranki-core` e `kranki-db` sono progettati in modo da non avere alcuna dipendenza verso il modulo dell'interfaccia grafica desktop (`kranki-ui`), garantendone il potenziale riutilizzo isolato (così come sono) in altri applicativi.
+
+---
+
+# 4. Design
+
+**Storico delle versioni**
+
+| Versione | Data | Autori | Descrizione delle modifiche |
+| :--- | :--- | :--- | :--- |
+| **0.1** | 19/11/2026 | Berardi Francesco, Meoli Richard, Rapetti Giorgio | Stesura della parte del documento relativa allo stile architettonico e alle più importanti decisioni di progetto. Stesura dell'introduzione relativa alle viste architettoniche, secondo il modello di *Krutchen*. |
+
+## 4.1 Architettura del software
+
+### 4.1.1 Stile architettonico
+
+### 4.1.2 Persistenza dei dati
+
+### 4.1.3 Interfaccia grafica
+
+### 4.1.4 Librerie esterne
+
+### 4.1.5 Viste architetturali
