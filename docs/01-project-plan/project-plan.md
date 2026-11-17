@@ -7,6 +7,7 @@
 | Versione | Data | Autori | Descrizione delle modifiche |
 | :--- | :--- | :--- | :--- |
 | **1.0** | 21/10/2026 | Berardi Francesco, Meoli Richard, Pullano Gabriele, Rapetti Giorgio | Redazione della prima versione completa del *Project Plan*. |
+| **1.1** | 17/11/2026 | Meoli Richard, Rapetti Giorgio | Introduzione del modulo `kranki-app` per stratificazione rigida, aggiornamento della mitigazione sui conflitti di sincronizzazione e integrazione delle risorse GUI (JavaFX/SceneBuilder). |
 
 ## 1.1 Introduzione
 
@@ -122,7 +123,7 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
 
 *   **Conflitti di sincronizzazione multi-dispositivo**\
     La modifica concorrente dei dati su dispositivi diversi comporta il rischio di conflitti durante la sincronizzazione con il database remoto.\
-    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà al comportamento predefinito di Firebase, accettando l'eventuale rischio di sovrascrittura.
+    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà a una semplice politica di sovrascrittura esplicita (es. *Last-Write-Wins* basata su timestamp), accettando l'eventuale rischio di sovrascrittura.
 *   **Sviluppo dell'interfaccia grafica**\
     L'implementazione di elementi grafici complessi, come un editor di testo avanzato, presenta difficoltà realizzative non trascurabili.\
     *Mitigazione:* se necessario, si adotteranno soluzioni più semplici, privilegiando il corretto funzionamento del sistema piuttosto che l'estetica.
@@ -183,14 +184,16 @@ Per quantificare l'efficacia della suite di collaudo, la misurazione della *Code
 Gli strumenti automatizzati saranno affiancati da un processo di validazione umana basato sulla *Code Review*. Tale revisione è obbligatoria per ogni *Pull Request* e deve essere rigorosamente effettuata da un membro del team diverso dall'autore delle modifiche. Questa ispezione incrociata agirà come un vero e proprio *Quality Gate* (cancello di qualità), garantendo l'identificazione di difetti logici, concettuali o architetturali che sfuggono alle analisi statiche e assicurando, al contempo, una conoscenza condivisa della *codebase* tra tutti gli sviluppatori.
 
 ## 1.10 Pacchetti di lavoro
-L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre componenti principali, corrispondenti ad altrettanti progetti Eclipse Maven. Le attività si articolano nei seguenti *Work Packages* (WP).
+L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre moduli funzionali principali, affiancati da un modulo di avvio, corrispondenti a quattro progetti Eclipse Maven sotto `kranki-parent`. Le attività si articolano nei seguenti *Work Packages* (WP).
 
 *   **Core (`kranki-core`)**\
     Costituisce il nucleo logico dell'applicazione. Include principalmente la modellazione delle entità di dominio (mazzi, carte,...) e l'implementazione degli algoritmi per la *Spaced Repetition* e lo scheduling adattivo, unitamente ai vari servizi ausiliari. Il modulo non presenta alcuna dipendenza verso gli altri componenti interni del sistema.
 *   **Database (`kranki-db`)**\
-    Si occupa della persistenza delle informazioni, delle operazioni di serializzazione per l'importazione/esportazione dei mazzi e dell'integrazione con i servizi esterni. L'adozione di un database remoto come *Firebase* risponde all'esigenza di consentire la sincronizzazione multi-dispositivo (con i necessari meccanismi di autenticazione correlati), predisponendo l'infrastruttura anche a un'eventuale estensione in ambito mobile. Il modulo dichiara una dipendenza da `kranki-core`.
+    Si occupa della persistenza locale e remota delle informazioni, delle operazioni di serializzazione per l'importazione/esportazione dei mazzi e dell'integrazione con i servizi esterni. L'adozione di un database remoto come *Firebase* risponde all'esigenza di consentire la sincronizzazione multi-dispositivo (con i necessari meccanismi di autenticazione correlati), predisponendo l'infrastruttura anche a un'eventuale estensione in ambito mobile. Il modulo dichiara una dipendenza da `kranki-core`.
 *   **UI (`kranki-ui`)**\
-    Dedicato allo sviluppo dell'interfaccia grafica, con l'obiettivo di offrire un'esperienza d'uso semplice e intuitiva. Il modulo dipende sia da `kranki-core` che da `kranki-db`.
+    Dedicato allo sviluppo dell'interfaccia grafica, con l'obiettivo di offrire un'esperienza d'uso semplice e intuitiva. Il modulo dichiara una dipendenza da `kranki-core`.
+*   **App (`kranki-app`)**\
+    Modulo di avvio dell'applicazione, privo di logica applicativa o grafica, incaricato di inizializzare e collegare tra loro i moduli funzionali del sistema all'apertura dell'applicativo. Il modulo dipende da `kranki-core`, `kranki-db` e `kranki-ui`.
 
 Tale ripartizione definisce la struttura e le dipendenze del software, ma non impone una rigida compartimentazione del personale durante lo sviluppo. Il team adotta infatti un modello di lavoro *cross-funzionale*: pur individuando per ciascun membro un'area di focus primario, è prevista una collaborazione trasversale sulle diverse attività.
 
@@ -207,6 +210,7 @@ Lo sviluppo e il test avverranno sui computer personali dei membri del team.
 * **Ambienti di sviluppo:** Eclipse IDE.
 * **Tool di modellazione:** StarUML v5.
 * **Database remoto:** Firebase (tier gratuito "*Spark Plan*", sufficiente per l'impiego previsto).
+* **Framework GUI:** JavaFX e SceneBuilder.
 
 ## 1.12 Budget e programma
 
@@ -219,7 +223,11 @@ Come già anticipato nel punto 2 del presente documento, la programmazione tempo
 
 ## 1.13 Cambiamenti
 
-Attualmente non sono presenti variazioni rispetto al piano iniziale. Eventuali modifiche future a requisiti, architettura o tempistiche verranno formalmente documentate all'interno di questa sezione.
+Rispetto alla versione `1.0` approvata del *Project Plan*, nella revisione `1.1` sono state introdotte le seguenti modifiche:
+
+* **Introduzione del modulo `kranki-app` e stratificazione rigida (Sez. 1.10):** per mantenere il pieno disaccoppiamento tra UI e persistenza anche con salvataggi locali frequenti, `kranki-ui` dipende ora esclusivamente da `kranki-core`, mentre il collegamento iniziale tra i moduli del sistema è demandato al modulo di avvio `kranki-app`.
+* **Aggiornamento della strategia di fallback sui conflitti (Sez. 1.6.2):** adeguata la mitigazione all'integrazione di Firebase su Java Desktop, sostituendo il riferimento al comportamento predefinito di Firebase con una politica di sovrascrittura esplicita (es. *Last-Write-Wins*).
+* **Integrazione delle risorse software (Sez. 1.11.2):** esplicitata l'adozione di JavaFX e SceneBuilder per la realizzazione dell'interfaccia grafica.
 
 ## 1.14 Consegna
 

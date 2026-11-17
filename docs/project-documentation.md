@@ -14,6 +14,7 @@
 | Versione | Data | Autori | Descrizione delle modifiche |
 | :--- | :--- | :--- | :--- |
 | **1.0** | 21/10/2026 | Berardi Francesco, Meoli Richard, Pullano Gabriele, Rapetti Giorgio | Redazione della prima versione completa del *Project Plan*. |
+| **1.1** | 17/11/2026 | Meoli Richard, Rapetti Giorgio | Introduzione del modulo `kranki-app` per stratificazione rigida, aggiornamento della mitigazione sui conflitti di sincronizzazione e integrazione delle risorse GUI (JavaFX/SceneBuilder). |
 
 ## 1.1 Introduzione
 
@@ -129,7 +130,7 @@ Di seguito sono riportati i principali fattori di rischio previsti per il proget
 
 *   **Conflitti di sincronizzazione multi-dispositivo**\
     La modifica concorrente dei dati su dispositivi diversi comporta il rischio di conflitti durante la sincronizzazione con il database remoto.\
-    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà al comportamento predefinito di Firebase, accettando l'eventuale rischio di sovrascrittura.
+    *Mitigazione:* qualora la risoluzione di tali problematiche si rivelasse impraticabile, ci si affiderà a una semplice politica di sovrascrittura esplicita (es. *Last-Write-Wins* basata su timestamp), accettando l'eventuale rischio di sovrascrittura.
 *   **Sviluppo dell'interfaccia grafica**\
     L'implementazione di elementi grafici complessi, come un editor di testo avanzato, presenta difficoltà realizzative non trascurabili.\
     *Mitigazione:* se necessario, si adotteranno soluzioni più semplici, privilegiando il corretto funzionamento del sistema piuttosto che l'estetica.
@@ -190,14 +191,16 @@ Per quantificare l'efficacia della suite di collaudo, la misurazione della *Code
 Gli strumenti automatizzati saranno affiancati da un processo di validazione umana basato sulla *Code Review*. Tale revisione è obbligatoria per ogni *Pull Request* e deve essere rigorosamente effettuata da un membro del team diverso dall'autore delle modifiche. Questa ispezione incrociata agirà come un vero e proprio *Quality Gate* (cancello di qualità), garantendo l'identificazione di difetti logici, concettuali o architetturali che sfuggono alle analisi statiche e assicurando, al contempo, una conoscenza condivisa della *codebase* tra tutti gli sviluppatori.
 
 ## 1.10 Pacchetti di lavoro
-L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre componenti principali, corrispondenti ad altrettanti progetti Eclipse Maven. Le attività si articolano nei seguenti *Work Packages* (WP).
+L'organizzazione delle attività di sviluppo adotta una *Work Breakdown Structure* (WBS) allineata alla struttura architetturale del sistema. Il software è suddiviso in tre moduli funzionali principali, affiancati da un modulo di avvio, corrispondenti a quattro progetti Eclipse Maven sotto `kranki-parent`. Le attività si articolano nei seguenti *Work Packages* (WP).
 
 *   **Core (`kranki-core`)**\
     Costituisce il nucleo logico dell'applicazione. Include principalmente la modellazione delle entità di dominio (mazzi, carte,...) e l'implementazione degli algoritmi per la *Spaced Repetition* e lo scheduling adattivo, unitamente ai vari servizi ausiliari. Il modulo non presenta alcuna dipendenza verso gli altri componenti interni del sistema.
 *   **Database (`kranki-db`)**\
-    Si occupa della persistenza delle informazioni, delle operazioni di serializzazione per l'importazione/esportazione dei mazzi e dell'integrazione con i servizi esterni. L'adozione di un database remoto come *Firebase* risponde all'esigenza di consentire la sincronizzazione multi-dispositivo (con i necessari meccanismi di autenticazione correlati), predisponendo l'infrastruttura anche a un'eventuale estensione in ambito mobile. Il modulo dichiara una dipendenza da `kranki-core`.
+    Si occupa della persistenza locale e remota delle informazioni, delle operazioni di serializzazione per l'importazione/esportazione dei mazzi e dell'integrazione con i servizi esterni. L'adozione di un database remoto come *Firebase* risponde all'esigenza di consentire la sincronizzazione multi-dispositivo (con i necessari meccanismi di autenticazione correlati), predisponendo l'infrastruttura anche a un'eventuale estensione in ambito mobile. Il modulo dichiara una dipendenza da `kranki-core`.
 *   **UI (`kranki-ui`)**\
-    Dedicato allo sviluppo dell'interfaccia grafica, con l'obiettivo di offrire un'esperienza d'uso semplice e intuitiva. Il modulo dipende sia da `kranki-core` che da `kranki-db`.
+    Dedicato allo sviluppo dell'interfaccia grafica, con l'obiettivo di offrire un'esperienza d'uso semplice e intuitiva. Il modulo dichiara una dipendenza da `kranki-core`.
+*   **App (`kranki-app`)**\
+    Modulo di avvio dell'applicazione, privo di logica applicativa o grafica, incaricato di inizializzare e collegare tra loro i moduli funzionali del sistema all'apertura dell'applicativo. Il modulo dipende da `kranki-core`, `kranki-db` e `kranki-ui`.
 
 Tale ripartizione definisce la struttura e le dipendenze del software, ma non impone una rigida compartimentazione del personale durante lo sviluppo. Il team adotta infatti un modello di lavoro *cross-funzionale*: pur individuando per ciascun membro un'area di focus primario, è prevista una collaborazione trasversale sulle diverse attività.
 
@@ -214,6 +217,7 @@ Lo sviluppo e il test avverranno sui computer personali dei membri del team.
 * **Ambienti di sviluppo:** Eclipse IDE.
 * **Tool di modellazione:** StarUML v5.
 * **Database remoto:** Firebase (tier gratuito "*Spark Plan*", sufficiente per l'impiego previsto).
+* **Framework GUI:** JavaFX e SceneBuilder.
 
 ## 1.12 Budget e programma
 
@@ -226,7 +230,11 @@ Come già anticipato nel punto 2 del presente documento, la programmazione tempo
 
 ## 1.13 Cambiamenti
 
-Attualmente non sono presenti variazioni rispetto al piano iniziale. Eventuali modifiche future a requisiti, architettura o tempistiche verranno formalmente documentate all'interno di questa sezione.
+Rispetto alla versione `1.0` approvata del *Project Plan*, nella revisione `1.1` sono state introdotte le seguenti modifiche:
+
+* **Introduzione del modulo `kranki-app` e stratificazione rigida (Sez. 1.10):** per mantenere il pieno disaccoppiamento tra UI e persistenza anche con salvataggi locali frequenti, `kranki-ui` dipende ora esclusivamente da `kranki-core`, mentre il collegamento iniziale tra i moduli del sistema è demandato al modulo di avvio `kranki-app`.
+* **Aggiornamento della strategia di fallback sui conflitti (Sez. 1.6.2):** adeguata la mitigazione all'integrazione di Firebase su Java Desktop, sostituendo il riferimento al comportamento predefinito di Firebase con una politica di sovrascrittura esplicita (es. *Last-Write-Wins*).
+* **Integrazione delle risorse software (Sez. 1.11.2):** esplicitata l'adozione di JavaFX e SceneBuilder per la realizzazione dell'interfaccia grafica.
 
 ## 1.14 Consegna
 
@@ -313,6 +321,7 @@ Una volta definito lo *Sprint Backlog*, i membri del team prelevano in autonomia
 | Versione | Data | Autori | Descrizione delle modifiche |
 | :--- | :--- | :--- | :--- |
 | **1.0** | 12/11/2026 | Berardi Francesco, Meoli Richard, Pullano Gabriele, Rapetti Giorgio | Redazione della prima versione completa del documento *Requisiti* e dei diagrammi dei casi d'uso associati. |
+| **1.1** | 17/11/2026 | Meoli Richard, Rapetti Giorgio | Precisazioni su persistenza locale immediata, sincronizzazione esplicita e ambito in memoria locale di *Undo/Redo* (`REQ-02`, `REQ-03`, `REQ-24`). |
 
 ## 3.1 Ingegneria dei requisiti
 
@@ -383,8 +392,8 @@ Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni
 | ID | Requisito | Criteri di accettazione | MoSCoW | Dipendenze | Issue GitHub | Rif. Codice | Rif. Test |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **REQ&#8209;01** | **Registrazione e autenticazione**<br>Il sistema deve consentire all'utente di creare un account e di autenticarsi, al fine di garantire l'accesso esclusivo ai propri *Mazzi*. L'autenticazione primaria deve avvenire tramite credenziali standard (indirizzo e-mail e password). Il sistema potrebbe opzionalmente supportare l'autenticazione tramite provider esterni.| L'accesso al sistema è consentito esclusivamente a seguito dell'inserimento di credenziali valide. In caso risultino errate, il sistema nega l'accesso e fornisce un riscontro visivo esplicativo all'utente, permettendo un nuovo tentativo di inserimento.| ![MUST](https://img.shields.io/badge/MUST-b60205?style=flat-square) | - | [#38](https://github.com/RichardBoy05/Kranki/issues/38)&nbsp;[UI]<br> [#39](https://github.com/RichardBoy05/Kranki/issues/39)&nbsp;[DB]<br> [#40](https://github.com/RichardBoy05/Kranki/issues/40)&nbsp;[CORE] | *TBD* | *TBD* |
-| **REQ&#8209;02** | **Persistenza dei dati**<br>Il sistema deve implementare un meccanismo di persistenza per garantire che i dati generati dall'utente (es. *Mazzi*, *Flashcard*, progressi di studio,...) vengano salvati in modo permanente, consentendo il ripristino e l'utilizzo dell'applicazione su dispositivi multipli. Tale requisito definisce le operazioni di salvataggio generiche su cui si appoggeranno le singole entità del dominio. | Al riavvio dell'applicazione, il sistema recupera e consente di visualizzare i dati salvati dall'utente. In seguito alla richiesta di sincronizzazione, i dati locali vengono inviati in remoto, garantendo la coerenza delle informazioni tra dispositivi diversi. | ![MUST](https://img.shields.io/badge/MUST-b60205?style=flat-square)| REQ&#8209;01 | [#41](https://github.com/RichardBoy05/Kranki/issues/41)&nbsp;[DB]| *TBD* | *TBD* |
-| **REQ&#8209;03** | **Risoluzione dei conflitti di sincronizzazione**<br>Il sistema potrebbe implementare un meccanismo per gestire eventuali disallineamenti tra i dati salvati localmente e quelli archiviati in remoto. Al rilevamento di uno stato di conflitto, il sistema richiede una decisione esplicita all'utente, permettendo di scegliere se sovrascrivere le informazioni remote con la versione locale oppure ripristinare i dati online. | Al verificarsi di un conflitto, l'applicazione presenta un avviso che richiede l'intervento manuale. Il sistema riprende il normale funzionamento solo a seguito di una scelta dell'utente in merito a quale delle due versioni conservare. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | REQ&#8209;02 | [#42](https://github.com/RichardBoy05/Kranki/issues/42)&nbsp;[UI]<br> [#43](https://github.com/RichardBoy05/Kranki/issues/43)&nbsp;[DB] | *TBD* | *TBD* |
+| **REQ&#8209;02** | **Persistenza dei dati**<br>Il sistema deve implementare un meccanismo di persistenza per garantire che i dati generati dall'utente (es. *Mazzi*, *Flashcard*, progressi di studio,...) vengano salvati in modo permanente, consentendo il ripristino e l'utilizzo dell'applicazione su dispositivi multipli. Tale requisito definisce le operazioni di salvataggio generiche su cui si appoggeranno le singole entità del dominio. Nello specifico, le modifiche ai dati vengono salvate immediatamente in un archivio locale (a supporto dell'utilizzo offline e del ripristino al riavvio), mentre l'allineamento con il database remoto avviene su esplicita richiesta di sincronizzazione. | Al riavvio dell'applicazione, il sistema recupera e consente di visualizzare i dati salvati dall'utente. In seguito alla richiesta di sincronizzazione, i dati locali vengono inviati in remoto, garantendo la coerenza delle informazioni tra dispositivi diversi. | ![MUST](https://img.shields.io/badge/MUST-b60205?style=flat-square)| REQ&#8209;01 | [#41](https://github.com/RichardBoy05/Kranki/issues/41)&nbsp;[DB]| *TBD* | *TBD* |
+| **REQ&#8209;03** | **Risoluzione dei conflitti di sincronizzazione**<br>Il sistema potrebbe implementare un meccanismo per gestire eventuali disallineamenti tra i dati salvati localmente e quelli archiviati in remoto. Al rilevamento di uno stato di conflitto, il sistema richiede una decisione esplicita all'utente, permettendo di scegliere se sovrascrivere le informazioni remote con la versione locale oppure ripristinare i dati online. | Al verificarsi di un conflitto in fase di sincronizzazione, l'applicazione presenta un avviso per i dati interessati che richiede l'intervento manuale. Il sistema riprende il normale funzionamento solo a seguito di una scelta dell'utente in merito a quale delle due versioni conservare, azzerando l'eventuale storico locale di *Undo/Redo* al completamento dell'operazione. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | REQ&#8209;02 | [#42](https://github.com/RichardBoy05/Kranki/issues/42)&nbsp;[UI]<br> [#43](https://github.com/RichardBoy05/Kranki/issues/43)&nbsp;[DB] | *TBD* | *TBD* |
 | **REQ&#8209;04** | **Importazione ed esportazione locale**<br>Il sistema dovrebbe permettere all'utente di esportare un proprio *Mazzo* su un file locale e di importare *Mazzi* a partire da file compatibili presenti sul dispositivo. L'esportazione dovrebbe preservare integralmente il contenuto delle *Flashcard*, inclusi il testo e gli eventuali elementi multimediali associati, garantendo la possibilità di effettuare backup manuali e di condividere il materiale di studio anche in assenza di connettività. | L'esportazione di un *Mazzo* genera un file locale conforme al formato supportato dall'applicazione. L'importazione di un file valido genera un nuovo *Mazzo* all'interno dell'applicazione, ripristinando fedelmente il contenuto delle *Flashcard* in esso contenute. A fronte di un file corrotto o non supportato, l'operazione viene annullata con un feedback visivo di errore. | ![SHOULD](https://img.shields.io/badge/SHOULD-E9963E?style=flat-square) | REQ&#8209;07 | [#44](https://github.com/RichardBoy05/Kranki/issues/44)&nbsp;[UI]<br> [#45](https://github.com/RichardBoy05/Kranki/issues/45)&nbsp;[CORE] | *TBD* | *TBD* |
 | **REQ&#8209;05** | **Condivisione pubblica dei _Mazzi_** <br>Il sistema potrebbe consentire di rendere pubblici i propri *Mazzi* all'interno della piattaforma, mettendoli a disposizione degli altri utenti. Attraverso una sezione dedicata, l'utente potrebbe esplorare il catalogo dei *Mazzi* condivisi e ottenerne una copia direttamente all'interno della propria libreria personale, favorendo uno scambio rapido di materiale di studio senza la necessità di trasferire manualmente file fisici. | Un *Mazzo* impostato come pubblico compare correttamente all'interno del catalogo condiviso. Il download di un elemento dal catalogo genera una copia autonoma nella schermata principale, assicurando che eventuali modifiche successive non alterino il *Mazzo* dell'autore originario. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | REQ&#8209;02, REQ&#8209;07 | [#46](https://github.com/RichardBoy05/Kranki/issues/46)&nbsp;[UI]<br> [#47](https://github.com/RichardBoy05/Kranki/issues/47)&nbsp;[DB] | *TBD* | *TBD* |
 | **REQ&#8209;06** | **Gestione dei _Mazzi_** <br>Il sistema deve mostrare all'utente l'interfaccia grafica principale dell'applicazione, dentro la quale è possibile creare, rinominare ed eliminare i *Mazzi*. | La creazione di un nuovo *Mazzo* o la modifica di uno esistente vanno a buon fine esclusivamente se l'utente fornisce un identificativo testuale non vuoto e non duplicato. L'operazione di eliminazione rimuove il *Mazzo* selezionato dalla vista e provoca la contestuale cancellazione di tutte le *Flashcard* associate e dei relativi storici di apprendimento. | ![MUST](https://img.shields.io/badge/MUST-b60205?style=flat-square) | - | [#48](https://github.com/RichardBoy05/Kranki/issues/48)&nbsp;[UI]<br> [#49](https://github.com/RichardBoy05/Kranki/issues/49)&nbsp;[CORE] | *TBD* | *TBD* |
@@ -405,7 +414,7 @@ Durante la fase di ingegneria dei requisiti sono stati inoltre realizzati alcuni
 | **REQ&#8209;21** | **Dashboard delle statistiche e timer di studio** <br>Il sistema dovrebbe permettere all'utente di consultare l'andamento del proprio studio attraverso una dashboard analitica che aggreghi vari tipi di dati storici. A supporto di tali metriche, il sistema dovrebbe implementare un timer in background attivo durante ogni *Sessione di studio*, capace di misurare il tempo di risposta per la singola *Flashcard*, con l'accortezza di sospendere il conteggio in caso di inattività prolungata per preservare l'affidabilità dei dati. | L'utente visualizza riepiloghi grafici o numerici coerenti con il reale storico delle valutazioni effettuate. Durante lo studio, il tempo registrato per la singola *Flashcard* riflette il tempo effettivo trascorso tra l'esposizione del *Fronte* e l'autovalutazione, tralasciando eventuali periodi di inattività che eccedano la soglia preimpostata dal sistema. | ![SHOULD](https://img.shields.io/badge/SHOULD-E9963E?style=flat-square) | REQ&#8209;02, REQ&#8209;16 | [#70](https://github.com/RichardBoy05/Kranki/issues/70)&nbsp;[UI]<br> [#71](https://github.com/RichardBoy05/Kranki/issues/71)&nbsp;[CORE] | *TBD* | *TBD* |
 | **REQ&#8209;22** | **Gamification** <br>Il sistema potrebbe integrare logiche di gamification al fine di incentivare la costanza giornaliera dell'utente, tramite meccanismi come *Streak* e *Milestone*. | Le *Streak* e le *Milestone* riflettono coerentemente l'attività di studio svolta in precedenza dall'utente. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | REQ&#8209;21 | [#72](https://github.com/RichardBoy05/Kranki/issues/72)&nbsp;[UI]<br> [#73](https://github.com/RichardBoy05/Kranki/issues/73)&nbsp;[CORE] | *TBD* | *TBD* |
 | **REQ&#8209;23** | **Keyboard Shortcuts** <br>Il sistema dovrebbe supportare una mappatura fissa di scorciatoie da tastiera, al fine di permettere all'utente di eseguire comodamente le azioni di sistema più frequenti. | Le scorciatoie da tastiera implementate si traducono nelle azioni previste durante l'uso dell'applicazione. | ![SHOULD](https://img.shields.io/badge/SHOULD-E9963E?style=flat-square) | REQ&#8209;08, REQ&#8209;16 | [#74](https://github.com/RichardBoy05/Kranki/issues/74)&nbsp;[UI] | *TBD* | *TBD* |
-| **REQ&#8209;24** | **Sistema globale di _Undo/Redo_** <br>Il sistema potrebbe implementare un meccanismo di *Undo/Redo* per annullare o ripristinare le operazioni strutturali eseguite dall'utente. Tale funzionalità opera a livello globale di applicazione, distinguendosi dal comune annullamento presente nell'editor di testo. | L'invocazione del comando di *Undo* o di *Redo* ripristina fedelmente lo stato dei dati e dell'interfaccia a quello immediatamente antecedente o successivo all'operazione eseguita dall'utente. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | - | [#75](https://github.com/RichardBoy05/Kranki/issues/75)&nbsp;[CORE] | *TBD* | *TBD* |
+| **REQ&#8209;24** | **Sistema globale di _Undo/Redo_** <br>Il sistema potrebbe implementare un meccanismo di *Undo/Redo* per annullare o ripristinare le operazioni strutturali eseguite dall'utente. Tale funzionalità opera a livello globale di applicazione, distinguendosi dal comune annullamento presente nell'editor di testo. Tale meccanismo opera esclusivamente sui dati della sessione corrente in memoria locale (aggiornando di riflesso l'archivio locale ma senza interagire con il database remoto) e viene azzerato alla chiusura della sessione o all'esecuzione di una sincronizzazione remota. | L'invocazione del comando di *Undo* o di *Redo* ripristina fedelmente lo stato dei dati e dell'interfaccia a quello immediatamente antecedente o successivo all'operazione eseguita dall'utente. Alla chiusura della sessione o a seguito di una sincronizzazione remota, lo storico delle operazioni annullabili/ripristinabili risulta azzerato. | ![COULD](https://img.shields.io/badge/COULD-0E8A65?style=flat-square) | - | [#75](https://github.com/RichardBoy05/Kranki/issues/75)&nbsp;[CORE] | *TBD* | *TBD* |
 | **REQ&#8209;25** | **Estensione a dispositivi mobili** <br>Il sistema potrebbe estendersi per essere distribuito sotto forma di applicazione nativa per dispositivi mobili o come client web. | - | ![WON'T](https://img.shields.io/badge/WON'T-A9A9A9?style=flat-square) | - | - | - | - |
 
 ## 3.2 Qualità del software
@@ -456,4 +465,30 @@ Questa categoria valuta l'adattabilità del software ai cambiamenti ambientali e
 
 ### 4.1.4 Librerie esterne
 
-### 4.1.5 Viste architetturali
+### Viste architetturali
+
+La documentazione dell'architettura di un sistema software richiede l'adozione di molteplici prospettive, in quanto un'unica rappresentazione globale risulterebbe insufficiente per comunicare efficacemente con tutti gli *stakeholder*. Per rispondere a questa esigenza, la progettazione di *Kranki* adotta il modello architetturale "4+1" ideato da Philippe **Kruchten**. Tale scelta si integra naturalmente nel ciclo di vita adottato dal team, in quanto tale modello costituisce lo standard di riferimento del processo **RUP** (*Rational Unified Process*), il quale prevede inoltre un forte orientamento all'utilizzo della notazione UML. La descrizione del sistema si articola quindi in quattro punti di vista tecnici, affiancati da una quinta prospettiva trasversale che funge da collante logico.
+
+#### Punto di vista logico
+Descrive il sistema sotto il profilo concettuale, evidenziando gli elementi di progettazione principali del dominio applicativo e le loro relazioni. Tale vista è rivolta principalmente a illustrare come l'architettura soddisfi i requisiti funzionali attesi dall'utente finale.
+* Diagramma delle classi: [link immagine](), [link file]()
+* Diagramma di stato: [link immagine](), [link file]()
+
+#### Punto di vista dell'implementazione
+Fornisce una visione statica orientata agli sviluppatori e alla gestione del codice sorgente, illustrando la scomposizione del sistema in termini di moduli, pacchetti e livelli architetturali.
+* Diagramma dei componenti: [link immagine](), [link file]()
+* Diagramma dei package: [link immagine](), [link file]()
+
+#### Punto di vista del processo
+Rappresenta il comportamento dinamico del sistema in fase di esecuzione, focalizzandosi sul flusso delle attività, sui processi e sulle dinamiche di interazione e comunicazione temporale tra gli oggetti.
+* Diagramma di sequenza: [link immagine](), [link file]()
+* Diagramma di attività: [link immagine](), [link file]()
+* Diagramma di comunicazione: [link immagine](), [link file]()
+
+#### Punto di vista della distribuzione
+Descrive l'architettura fisica del sistema, illustrando come gli artefatti software vengono distribuiti e allocati sui rispettivi nodi di esecuzione.
+* Diagramma di deployment: [link immagine](), [link file]()
+
+#### Punto di vista degli scenari (+1)
+Raccoglie l'insieme dei casi d'uso fondamentali del sistema. Questa prospettiva guida l'intero processo di progettazione architetturale e svolge un ruolo di validazione e integrazione per gli altri quattro punti di vista tecnici.
+* I diagrammi dei casi d'uso sono già stati inclusi nella sezione del documento dedicata alla descrizione dei requisiti del sistema.
