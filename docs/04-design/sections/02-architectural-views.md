@@ -24,4 +24,4 @@ Illustra la topologia fisica del sistema, definendo le modalità con cui gli art
 
 #### Punto di vista degli scenari (+1)
 Raccoglie l'insieme dei casi d'uso fondamentali del sistema. Questa prospettiva guida l'intero processo di progettazione architetturale e svolge un ruolo di validazione e integrazione per gli altri quattro punti di vista tecnici.
-* Diagramma dei casi d'uso: [link immagine](), [link file]()
+* I diagrammi dei casi d'uso sono già stati inclusi nella sezione del documento dedicata alla descrizione dei requisiti del sistema.
