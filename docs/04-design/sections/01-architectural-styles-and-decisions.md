@@ -5,7 +5,7 @@
 La struttura del sistema si configura come un'architettura a **3 strati rigida**, le cui relazioni di dipendenza statica e la mappatura rispetto al modello *Model-View-Controller* (MVC) sono rappresentate nello schema seguente.
 
 <p align="center">
- <img src="https://github.com/RichardBoy05/Kranki/blob/81-redazione-del-documento-sugli-stili-architetturali/docs/04-design/resources/stile_architettonico_kranki.png?raw=true"
+ <img src="https://github.com/RichardBoy05/Kranki/blob/main/docs/04-design/resources/stile_architettonico_kranki.png?raw=true"
  alt="Schema dello stile architettonico" width=500>
  </p>
 
@@ -55,6 +55,20 @@ La tabella seguente riassume le decisioni architetturali adottate per la persist
 
 ### 4.1.3 Interfaccia grafica
 
+
+La tabella seguente formalizza la decisione relativa al framework adottato per lo sviluppo dell'interfaccia grafica nello strato `kranki-ui`.
+
+| Elemento | Descrizione |
+| :--- | :--- |
+| **Problema** | Selezionare il framework GUI Java per `kranki-ui` che assicuri layout dinamici adattabili a diverse risoluzioni, separazione netta tra interfaccia e logica, buona resa estetica entro le scadenze del corso e apertura verso future evoluzioni dell'editor di testo. |
+| **Decisione** | Adozione di **JavaFX** (tramite viste dichiarative **FXML**, fogli di stile **CSS**, supporto visuale **SceneBuilder** e componente browser integrato **WebView**). |
+| **Stato** | Approvato. |
+| **Presupposti** | Sviluppo in Java con Eclipse e Maven; versione JDK allineata tra tutti i membri del team e l'ambiente di valutazione; avvio diretto dell'applicazione senza configurazioni manuali complesse da parte dell'utente. |
+| **Alternative** | **1. Java Swing:** integrato nel JDK e privo di dipendenze native, ma sprovvisto di un editor visuale moderno orientato a MVC, dotato di un componente HTML obsoleto inadatto a un editor evoluto e privo di componenti grafici nativi per le statistiche.<br>**2. Applicazione Web locale (es. JSP / Vaadin):** scartata perché il progetto è concepito come applicazione desktop nativa con scorciatoie da tastiera reattive e pieno supporto offline. |
+| **Motivazione** | **1. Supporto visuale con SceneBuilder e separazione naturale con MVC:** la progettazione visuale mediante SceneBuilder e file FXML impone fisicamente il disaccoppiamento tra definizione grafica (*View*) e gestione eventi (*Controller*), abilitando layout *responsive* e HiDPI (superando il posizionamento a coordinate assolute) e attenuando la curva di apprendimento iniziale.<br>**2. Potenzialità future dell'editor ed evoluzioni post-universitarie:** il componente browser integrato consente il rendering avanzato di Markdown e formule LaTeX e lascia aperta l'evoluzione post-esame verso un editor ricco senza limiti strutturali.<br>**3. Estetica moderna e grafici nativi:** il supporto nativo a CSS permette di ottenere un'interfaccia curata con sforzo contenuto, mentre i grafici integrati coprono nativamente la dashboard delle statistiche. |
+| **Implicazioni** | **1. Configurazione Maven/Eclipse multipiattaforma:** non essendo incluso nel JDK moderno e includendo binari nativi per sistema operativo, richiede dipendenze prive di vincoli rigidi alla piattaforma, JDK allineato e un punto d'avvio separato per evitare errori di *module-path* su Eclipse.<br>**2. Isolamento degli strati sottostanti:** divieto assoluto di riferimenti a JavaFX in `kranki-core` e `kranki-db` per preservarne riutilizzabilità e testabilità.<br>**3. Gestione dei controllori e sviluppo incrementale:** necessità di un meccanismo centralizzato in `kranki-ui` per fornire ai controllori i gestori del Core senza ricorrere a *Singleton* globali; priorità alle schermate essenziali con controlli standard, rimandando `WebView` e grafici agli incrementi successivi. |
+| **Appunti** | Nessuno. |
+
 ### 4.1.4 Librerie esterne
 
-
+TODO
