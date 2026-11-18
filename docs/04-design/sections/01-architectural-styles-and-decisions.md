@@ -56,7 +56,7 @@ La tabella seguente riassume le decisioni architetturali adottate per la persist
 ### 4.1.3 Interfaccia grafica
 
 
-La tabella seguente formalizza la decisione relativa al framework adottato per lo sviluppo dell'interfaccia grafica nello strato `kranki-ui`.
+La tabella seguente formalizza la decisione relativa al framework adottato per lo sviluppo dell'interfaccia grafica.
 
 | Elemento | Descrizione |
 | :--- | :--- |
