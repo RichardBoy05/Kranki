@@ -60,7 +60,7 @@ La tabella seguente formalizza la decisione relativa al framework adottato per l
 
 | Elemento | Descrizione |
 | :--- | :--- |
-| **Problema** | Selezionare il framework GUI Java per `kranki-ui` che assicuri layout dinamici adattabili a diverse risoluzioni, separazione netta tra interfaccia e logica, buona resa estetica entro le scadenze del corso e apertura verso future evoluzioni dell'editor di testo. |
+| **Problema** | Selezionare un framework Java GUI che assicuri layout dinamici adattabili a schermi di diverse risoluzioni, separazione netta tra interfaccia e logica, buona resa estetica realizzabile entro le scadenze del Corso e apertura verso future evoluzioni dell'interfaccia (specie quelle relative all'editor di testo). |
 | **Decisione** | Adozione del framework **JavaFX** supportato dal tool visuale **SceneBuilder**. |
 | **Stato** | Approvato. |
 | **Presupposti** | Sviluppo in Java con Eclipse e Maven. |
