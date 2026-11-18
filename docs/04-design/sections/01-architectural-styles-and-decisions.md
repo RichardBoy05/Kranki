@@ -32,7 +32,7 @@ La tabella seguente formalizza la decisione relativa allo stile architetturale a
   * **Computazionale:** il nucleo algoritmico per il calcolo degli intervalli e delle scadenze di ripasso (_SM-2_ ed *Exam Mode*), le unità di calcolo delle statistiche e di filtraggio/ricerca,... .
   * **Memoria:** l'archivio locale persistente su file JSON (organizzato per singolo utente) e il database cloud *Firebase Realtime Database*, preposti al mantenimento strutturato e duraturo dei dati.
 * **Connettori:**
-  * **Chiamata di procedura:** connettore principale per tutte le comunicazioni interne sincrone tra `kranki-ui`, `kranki-core` e `kranki-db` (quest'ultimo invocato dal Core tramite le interfacce astratte definite nello strato di dominio).
+  * **Chiamata di procedura:** connettore principale per le comunicazioni interne sincrone tra `kranki-ui`, `kranki-core` e `kranki-db`.
   * **Invocazione implicita:** meccanismo ad eventi nativo dell'interfaccia grafica JavaFX tra i componenti visivi e i controllori di presentazione.
   * **Passaggio di messaggio:** comunicazione su rete TCP/IP tramite protocollo HTTPS/REST con payload JSON tra il modulo `kranki-db` e i servizi remoti Firebase.
   * **Istanziazione:** creazione e collegamento iniziale dei moduli all'avvio dell'applicazione in `kranki-app` e istanziazione a runtime delle entità di dominio (*Mazzi*, *Flashcard*, *Sessioni di studio*,...) in `kranki-core`.
