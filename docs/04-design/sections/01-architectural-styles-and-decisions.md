@@ -63,7 +63,7 @@ La tabella seguente formalizza la decisione relativa al framework adottato per l
 | **Problema** | Selezionare un framework Java GUI che assicuri layout dinamici adattabili a schermi di diverse risoluzioni, separazione netta tra interfaccia e logica, buona resa estetica realizzabile entro le scadenze del corso e apertura verso future evoluzioni dell'interfaccia (specie quelle relative all'editor di testo). |
 | **Decisione** | Adozione del framework **JavaFX** supportato dal tool visuale **SceneBuilder**. |
 | **Stato** | Approvato. |
-| **Presupposti** | Sviluppo in Java con Eclipse e Maven. |
+| **Presupposti** | Applicazione Java Desktop sviluppata in Eclipse con Maven. |
 | **Alternative** | **Java Swing:** integrato nel JDK; tuttavia, i suoi strumenti di progettazione visuale (es. *WindowBuilder*) generano codice Java che non favorisce nativamente la separazione MVC, il supporto HTML integrato è datato per l'evoluzione di un editor di *Flashcard* avanzato e sono richieste librerie esterne aggiuntive per realizzare i grafici delle statistiche. |
 | **Motivazione** | **1. SceneBuilder e separazione MVC:** la progettazione visuale tramite SceneBuilder e viste dichiarative FXML separa fisicamente la parte grafica (*View*) dalla gestione degli eventi (*Controller*), attenuando al contempo la curva di apprendimento iniziale.<br>
 **2. Evoluzione dell'editor:** il componente browser integrato consente un rendering avanzato di *Markdown* e formule *LaTeX*, lasciando aperta l'evoluzione post-esame verso uno strumento di scrittura più ricco.<br>
