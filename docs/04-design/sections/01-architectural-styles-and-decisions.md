@@ -61,7 +61,7 @@ La tabella seguente formalizza la decisione relativa al framework adottato per l
 | Elemento | Descrizione |
 | :--- | :--- |
 | **Problema** | Selezionare il framework GUI Java per `kranki-ui` che assicuri layout dinamici adattabili a diverse risoluzioni, separazione netta tra interfaccia e logica, buona resa estetica entro le scadenze del corso e apertura verso future evoluzioni dell'editor di testo. |
-| **Decisione** | Adozione di **JavaFX** (tramite viste dichiarative **FXML**, fogli di stile **CSS**, supporto visuale **SceneBuilder** e componente browser integrato **WebView**). |
+| **Decisione** | Adozione del framework **JavaFX** supportato dal tool visuale **SceneBuilder**. |
 | **Stato** | Approvato. |
 | **Presupposti** | Sviluppo in Java con Eclipse e Maven. |
 | **Alternative** | **Java Swing:** integrato nel JDK; tuttavia, i suoi strumenti di progettazione visuale (es. *WindowBuilder*) generano codice Java che non favorisce nativamente la separazione MVC, il supporto HTML integrato è datato per l'evoluzione di un editor di *Flashcard* avanzato e sono richieste librerie esterne aggiuntive per realizzare i grafici delle statistiche. |
