@@ -69,7 +69,7 @@ La tabella seguente formalizza la decisione relativa al framework adottato per l
 2. **Evoluzione dell'editor:** il componente browser integrato consente un rendering avanzato di *Markdown* e formule *LaTeX*, lasciando aperta l'evoluzione post-esame verso uno strumento di scrittura più ricco.<br>
 **3. Estetica e grafici integrati:** gli strumenti di styling di JavaFX (incluso il supporto ai fogli CSS) permettono di ottenere un'interfaccia curata con sforzo contenuto, mentre il supporto nativo ai grafici consente di realizzare la dashboard delle statistiche senza librerie esterne. |
 | **Implicazioni** | **1. Impatto sull'ambiente:** introduce una dipendenza esterna non inclusa nel JDK e basata su librerie native, da configurare opportunamente per garantire la portabilità multipiattaforma.<br>
-2. **Impatto sul team:** richiede una fase iniziale di familiarizzazione con il framework da parte del team.<br>
+**2. Impatto sul team:** richiede una fase iniziale di familiarizzazione con il framework da parte del team.<br>
 **3. Isolamento degli strati sottostanti:** per preservarne riutilizzabilità e testabilità, i moduli `kranki-core` e `kranki-db` devono rimanere completamente privi di dipendenze o riferimenti al framework JavaFX. |
 | **Appunti** | Nessuno. |
 
