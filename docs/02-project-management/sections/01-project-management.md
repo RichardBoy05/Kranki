@@ -8,7 +8,7 @@ La fase di stesura del codice è vincolata all'interno di *Sprint* di durata fis
 
 | Iterazione   | Data Inizio      | Data Fine        | Obiettivo Principale |
 | :----------- | :--------------- | :--------------- | :------------------- |
-| **Sprint 1** | 19 Novembre 2026 | 03 Dicembre 2026 | TODO - da definire   |
+| **Sprint 1** | 19 Novembre 2026 | 03 Dicembre 2026 | Entità di dominio, algoritmo di scheduling, autenticazione, UI e documentazione.   |
 | **Sprint 2** | 03 Dicembre 2026 | 17 Dicembre 2026 | TODO - da definire   |
 | **Sprint 3** | 17 Dicembre 2026 | 31 Dicembre 2026 | TODO - da definire   |
 | **Sprint 4** | 31 Dicembre 2026 | 14 Gennaio 2027  | TODO - da definire   |
@@ -16,7 +16,9 @@ La fase di stesura del codice è vincolata all'interno di *Sprint* di durata fis
 *(Nota: gli obiettivi dei singoli Sprint sono puramente indicativi e si adattano dinamicamente in base alle priorità del Product Backlog).*
 
 ### 2.1.3 Approccio MDA
-Durante la fase di *Elaboration*, il team adotta tecniche proprie del paradigma MDA limitandone l'applicazione allo sviluppo di parte del modulo centrale (`kranki-core`). Utilizzando il software di modellazione **StarUML**, viene disegnato il *Class Diagram* relativo al dominio applicativo. In seguito, sfruttando la funzionalità di generazione del codice integrata nel tool, una porzione del diagramma viene tradotta automaticamente nello scheletro Java delle entità fondamentali del sistema (es. `Deck`, `Flashcard`,...). Questo perimetro di applicazione mirato evita la generazione di codice *boilerplate* inutile nei moduli UI e DB, limitando l'intervento manuale degli sviluppatori alla sola implementazione della logica di business all'interno degli *Sprint*.
+Durante la fase di *Elaboration*, il team adotta tecniche proprie del paradigma MDA limitandone l'applicazione a un ristretto sottoinsieme del modulo `kranki-core`. Utilizzando il software di modellazione **StarUML**, viene disegnato il *Class Diagram* relativo al dominio applicativo. In seguito, sfruttando la funzionalità di generazione del codice integrata nel tool, tale nucleo limitato di classi viene tradotto automaticamente nello scheletro Java corrispondente. Questo perimetro di applicazione mirato evita la generazione di codice *boilerplate* inutile nei moduli UI, DB e nella restante porzione del Core, la cui codifica viene completata e rifinita manualmente durante gli *Sprint*.
+
+* Diagramma delle classi coinvolte: [link immagine](TODO: inserire), [link file](TODO: inserire)
 
 ### 2.1.4 Formalizzazione della gestione delle *Change Request* / *Issue*
 TODO - si può fare un *activity diagram*
