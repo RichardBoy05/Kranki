@@ -22,6 +22,9 @@
     <sonar.coverage.exclusions>**/*.java</sonar.coverage.exclusions>
     <!-- Log4J2 -->
     <log4j.version>2.26.1</log4j.version>
+    <!-- JavaFX -->
+    <javafx.version>25.0.5.1</javafx.version>
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -36,10 +39,41 @@
       <!-- Log4J2 -->
       <dependency>
       <groupId>org.apache.logging.log4j</groupId>
-       <artifactId>log4j-bom</artifactId>
-       <version>${log4j.version}</version>
-       <type>pom</type>
-       <scope>import</scope>
+        <artifactId>log4j-bom</artifactId>
+        <version>${log4j.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- JavaFX -->
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-base</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-web</artifactId>
+        <version>${javafx.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-media</artifactId>
+        <version>${javafx.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -81,6 +115,11 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>${javafx.maven.plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>

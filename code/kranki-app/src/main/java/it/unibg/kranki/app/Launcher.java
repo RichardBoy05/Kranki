@@ -1,15 +1,22 @@
 package it.unibg.kranki.app;
 
+import javafx.application.Application;
+
 /**
- * Hello world!
+ * Entry point delegating application startup to {@link KrankiApp}.
  */
 public final class Launcher {
 	
 	private Launcher(){
-		// no istantiation
+		// prevents instantiation
 	}
 	
+    /**
+     * Launches the JavaFX runtime.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {   	
-    	new KrankiApp().start();
+    	Application.launch(KrankiApp.class, args);
     }
 }

@@ -49,4 +49,16 @@
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>it.unibg.kranki.app.Launcher</mainClass>
+          <runtimePathOption>CLASSPATH</runtimePathOption>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
