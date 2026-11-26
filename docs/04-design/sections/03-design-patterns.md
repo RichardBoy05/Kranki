@@ -91,7 +91,7 @@ Il pattern costituisce la spina dorsale di orchestrazione del sistema, ponendosi
 L'introduzione di queste facciate è essenziale per tradurre in pratica l'architettura a 3 strati rigida che adotta il sistema:
 * **Riduzione del *Coupling Between Objects* (`CBO`):** accentrando l'orchestrazione nei cinque `Service`, i componenti esterni della UI non devono conoscere o manipolare direttamente la complessa rete di collaboratori interni. I chiamanti interagiscono esclusivamente con la facciata del proprio ambito applicativo, riducendo la metrica di `CBO`.
 * **Coerenza del flusso transazionale:** centralizzare l'orchestrazione nei `Service` assicura che ogni comando proveniente dall'interfaccia esegua in modo rigoroso la sequenza *validazione delle regole di dominio → persistenza locale immediata → notifica agli osservatori*, impedendo che i controller grafici alterino in modo incoerente lo stato volatile dell'applicazione rispetto all'archivio locale sul disco.
-* **Elevata coesione contro il rischio di un gestore monolitico:** suddividere il livello di servizio in cinque facciate focalizzate per area funzionale, anziché concentrare tutte le operazioni applicative in un unico gestore centrale, mantiene elevata la coesione di ciascun `Service`, ne contiene la complessità ciclomatica e agevola la manutenzione e lo sviluppo parallelo da parte del team.
+* **Elevata coesione:** suddividere il livello di servizio in cinque facciate focalizzate per area funzionale, anziché concentrare tutte le operazioni in un unico gestore monolitico centrale, mantiene elevata la coesione di ciascun `Service`, ne contiene la complessità ciclomatica, ne agevola la manutenzione e favorisce lo sviluppo parallelo.
 
 ### 4.2.5 Pattern e principi architetturali complementari
 
