@@ -54,7 +54,7 @@ La scelta della delega tramite composizione è guidata dalle seguenti consideraz
 
 #### Descrizione del pattern
 
-Il pattern comportamentale **Observer** risolve il problema dell'aggiornamento reattivo e coerente tra componenti che devono reagire a cambiamenti di stato di un soggetto comune, evitando di legarli tramite associazioni dirette e rigide. Quando classi appartenenti a moduli o sottosistemi differenti si conoscono reciprocamente in modo concreto, la modifica o il riutilizzo di un componente comporta inevitabilmente ripercussioni sugli altri.
+Il pattern comportamentale **Observer** risolve il problema dell'aggiornamento reattivo tra componenti che devono reagire ai cambiamenti di stato di un soggetto comune, evitando di legarli tramite associazioni dirette e rigide. Quando classi appartenenti a moduli o sottosistemi differenti si conoscono reciprocamente in modo concreto, la modifica o il riutilizzo di un componente comporta inevitabilmente ripercussioni sugli altri. L'adozione di questo pattern consente quindi di ridurre l'accoppiamento tra i componenti, favorendo una maggiore indipendenza e flessibilità.
 
 Il pattern disaccoppia il produttore delle notifiche dai suoi consumatori mediante l'introduzione di un contratto astratto di osservazione:
 * **`Observable`:** componente che mantiene l'elenco dinamico degli osservatori registrati (consentendone iscrizione e rimozione) e si occupa di inviare una notifica al verificarsi di variazioni rilevanti di stato.
