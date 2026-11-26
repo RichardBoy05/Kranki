@@ -46,7 +46,7 @@ Il pattern trova applicazione all'interno del motore di scheduling in `kranki-co
 
 #### Motivazione della scelta
 
-La scelta della delega tramite composizione, in luogo dell'ereditarietà o della duplicazione del codice, è guidata dalle seguenti considerazioni progettuali:
+La scelta della delega tramite composizione è guidata dalle seguenti considerazioni progettuali:
 * **Rispetto della relazione *is-a* e contenimento della profondità di ereditarietà:** far estendere `Sm2Scheduler` da parte di `ExamModeScheduler` (`extends Sm2Scheduler`) violerebbe la semantica *is-a*, poiché la modalità *Exam Mode* può comprimere e alterare significativamente la naturale dilazione di *SM-2* e, in evoluzioni successive, potrebbe adottare formule autonome o appoggiarsi a un differente modello di base. La delega preserva una gerarchia piatta, evitando gli antipattern tipici della generalizzazione impropria.
 * ***Information Hiding* e assenza di duplicazione:** `ExamModeScheduler` collabora con `Sm2Scheduler` unicamente attraverso l'interfaccia pubblica di quest'ultimo, senza richiedere visibilità `protected` né dipendere dalla sua rappresentazione interna. Al contempo, si azzera la duplicazione tanto della logica *SM-2* in `kranki-core` quanto delle procedure di parsing JSON tra i diversi repository e gateway di `kranki-db`.
 * **Rispetto della *Legge di Demetra* e basso accoppiamento:** `ExamModeScheduler` non espone il proprio `Delegate` ai chiamanti né trasferisce loro l'onere di combinare i due calcoli; analogamente, `StudySession` interagisce unicamente con il proprio collaboratore diretto tramite `SchedulingStrategy`, evitando accessi a classi non adiacenti.
