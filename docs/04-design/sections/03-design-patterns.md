@@ -88,7 +88,7 @@ Il pattern costituisce la spina dorsale di orchestrazione del sistema, ponendosi
 
 #### Motivazione della scelta
 
-L'introduzione di queste facciate è essenziale per tradurre in pratica l'architettura a 3 strati rigida definita nella sezione `4.1.1`:
+L'introduzione di queste facciate è essenziale per tradurre in pratica l'architettura a 3 strati rigida che adotta il sistema:
 * **Riduzione del *Coupling Between Objects* (`CBO`) e rispetto della *Legge di Demetra*:** interponendo i cinque `Service` tra `kranki-ui` e il cuore di `kranki-core`, i controller non devono conoscere né navigare direttamente grafi di oggetti interni. Ciò abbatte la metrica `CBO` dei controller e garantisce il rispetto della *Legge di Demetra*, isolando la UI da eventuali refactoring interni del dominio o della persistenza.
 * **Uniformità del flusso transazionale e *Information Hiding*:** centralizzare l'orchestrazione nei `Service` assicura che ogni comando proveniente dall'interfaccia esegua in modo rigoroso e ripetibile la sequenza *validazione delle regole di dominio → persistenza locale immediata → notifica agli osservatori su `WorkspaceNotifier`*, impedendo che i controllori grafici alterino in modo incoerente lo stato in memoria rispetto all'archivio locale.
 * **Elevata coesione contro il rischio di un gestore monolitico:** suddividere il livello di servizio in cinque facciate focalizzate per area funzionale, anziché concentrare tutte le operazioni applicative in un unico gestore centrale, mantiene elevata la coesione di ciascun `Service`, ne contiene la complessità ciclomatica e agevola la manutenzione e lo sviluppo parallelo da parte del team.
