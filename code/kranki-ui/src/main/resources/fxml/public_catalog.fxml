@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" alignment="CENTER" prefHeight="540.0" prefWidth="720.0" spacing="12.0"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="it.unibg.kranki.ui.controller.PublicCatalogController">
+    <children>
+        <Label text="%screen.public_catalog.title" />
+    </children>
+</VBox>

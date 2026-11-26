@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="root" alignment="CENTER" prefHeight="640.0" prefWidth="960.0" spacing="12.0"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="it.unibg.kranki.ui.controller.MainController">
+    <children>
+        <Label text="%screen.main.title" />
+    </children>
+</VBox>
