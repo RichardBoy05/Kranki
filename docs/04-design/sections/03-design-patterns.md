@@ -95,7 +95,7 @@ L'introduzione di queste facciate è essenziale per tradurre in pratica l'archit
 
 ### 4.2.5 Principi architetturali complementari
 
-A completamento dei quattro *design pattern* principali, l'architettura di **Kranki** si appoggia trasversalmente a tre principi e meccanismi semplici, adottati per far collaborare i diversi moduli mantenendoli ordinati e indipendenti tra loro:
+A completamento dei quattro *design patterns* principali, l'architettura adotta tre ulteriori principi per disciplinare l'interazione tra i diversi moduli:
 
 * **`Dependency Inversion Principle (DIP)`:** i moduli centrali definiscono interfacce astratte che vengono poi realizzate dai moduli esterni. *Dove:* nelle porte di `core.port` implementate in `kranki-db`, in `WorkspaceObserver` implementata in `kranki-ui` e in `Navigator` implementata da `JavaFxNavigator`. *Motivo:* mantenere `kranki-core` isolato dai dettagli di salvataggio e grafica, evitando dipendenze circolari tra i moduli.
 * **`Dependency Injection (DI)`:** invece di creare autonomamente i propri collaboratori o ricorrere a riferimenti globali nascosti, le classi li ricevono dall'esterno tramite costruttore. *Dove:* nei costruttori dei cinque `Service`, delle classi di `kranki-db` e dei controller JavaFX tramite `ControllerFactory` (registrata su `FXMLLoader`). *Motivo:* rendere chiari i legami tra le classi, collegare moduli separati rispettando il *DIP* e sostituire facilmente i collaboratori durante i test unitari.
