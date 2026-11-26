@@ -14,8 +14,6 @@ La soluzione prevede l'estrazione delle singole famiglie algoritmiche in classi 
 * **`Context`:** classe che mantiene un riferimento all'interfaccia `Strategy` (per composizione o aggregazione) e delega a essa l'esecuzione dell'elaborazione richiesta, rimanendo ignara della classe concreta utilizzata.
 * **`Client`:** componente responsabile di selezionare la `ConcreteStrategy` idonea allo scenario d'uso corrente e di associarla al `Context`.
 
-![Diagramma UML Strategy](resources/pattern-strategy.png)
-
 #### Punto di applicazione in Kranki
 
 Il pattern è applicato integralmente all'interno del modulo `kranki-core` per governare le logiche di programmazione dei ripassi:
@@ -30,7 +28,6 @@ L'adozione del pattern **Strategy** risulta determinante per mantenere elevata l
 * **Coesione, *Information Hiding* e testabilità unitaria:** ogni *ConcreteStrategy* isola al proprio interno i dettagli matematici del corrispondente algoritmo. Ciò rende ciascun algoritmo collaudabile in modo indipendente tramite test unitari JUnit, senza dover istanziare l'intera sessione di studio né simulare strati esterni.
 * ***Open/Closed Principle*:** `StudySession` rimane chiusa rispetto a future modifiche della propria struttura interna ma aperta all'estensione comportamentale. L'eventuale integrazione futura di nuovi algoritmi di *Spaced Repetition* richiederà esclusivamente l'aggiunta di una nuova classe implementante `SchedulingStrategy` e il relativo criterio di selezione in `StudyService`, senza alcun impatto sul codice di gestione della sessione.
 
----
 
 ### 4.2.2 Delegation
 
@@ -42,7 +39,6 @@ Il meccanismo si basa sulla composizione esplicita tra due ruoli principali:
 * **`Delegator`:** classe che espone il servizio verso l'esterno ma, invece di reimplementarne l'intera logica o ereditarla da una superclasse, inoltra l'esecuzione delle sotto-operazioni opportune a un oggetto collaboratore incapsulato.
 * **`Delegate`:** classe collaboratrice detenente la logica riutilizzabile che esegue l'operazione delegata per conto del `Delegator`.
 
-![Diagramma UML Delegation](resources/pattern-delegation.png)
 
 #### Punto di applicazione in Kranki
 
@@ -57,8 +53,6 @@ La scelta della delega tramite composizione, in luogo dell'ereditarietà o della
 * ***Information Hiding* e assenza di duplicazione:** `ExamModeScheduler` collabora con `Sm2Scheduler` unicamente attraverso l'interfaccia pubblica di quest'ultimo, senza richiedere visibilità `protected` né dipendere dalla sua rappresentazione interna. Al contempo, si azzera la duplicazione tanto della logica *SM-2* in `kranki-core` quanto delle procedure di parsing JSON tra i diversi repository e gateway di `kranki-db`.
 * **Rispetto della *Legge di Demetra* e basso accoppiamento:** `ExamModeScheduler` non espone il proprio `Delegate` ai chiamanti né trasferisce loro l'onere di combinare i due calcoli; analogamente, `StudySession` interagisce unicamente con il proprio collaboratore diretto tramite `SchedulingStrategy`, evitando accessi a classi non adiacenti.
 
----
-
 ### 4.2.3 Observer
 
 #### Descrizione del pattern
@@ -69,10 +63,6 @@ Il pattern disaccoppia il produttore delle notifiche dai suoi consumatori median
 * **`Observable`:** componente che mantiene l'elenco dinamico degli osservatori registrati (consentendone iscrizione e rimozione) e si occupa di inviare una notifica al verificarsi di variazioni rilevanti di stato.
 * **`Observer`:** interfaccia astratta che espone il metodo di notifica invocato dall'`Observable` al cambio di stato.
 * **`ConcreteObserver`:** implementazioni concrete interessate all'aggiornamento che si registrano presso l'`Observable` e reagiscono alle notifiche ricevute, mantenendo l'`Observable` completamente agnostico rispetto alla loro identità e al loro numero.
-
-![Diagramma UML Observer](resources/pattern-observer.png)
-
-#### Punto di applicazione in Kranki
 
 La comunicazione reattiva tra il nucleo di dominio e le schermate persistenti dell'interfaccia grafica è realizzata attraverso i moduli `kranki-core` e `kranki-ui`:
 * **Infrastruttura di notifica (`it.unibg.kranki.core.observer`):** `WorkspaceObserver` definisce l'interfaccia *Observer*, mentre `WorkspaceNotifier` funge da *Observable* centralizzando la registrazione, la rimozione e la notifica degli osservatori. Le segnalazioni viaggiano tramite `WorkspaceEvent`, un oggetto immutabile e tipizzato da `WorkspaceEventType` che qualifica la natura dell'evento occorso senza trasportare entità di dominio mutabili.
@@ -85,8 +75,6 @@ La configurazione adottata risponde a precisi vincoli architetturali e di affida
 * **Disaccoppiamento tra viste e supporto ad aggiornamenti asincroni:** senza il pattern **Observer**, i controller dovrebbero mantenere riferimenti reciproci diretti per notificarsi le modifiche. Con `WorkspaceNotifier`, variazioni originate da finestre secondarie, da scorciatoie da tastiera o da operazioni asincrone come la sincronizzazione remota si riflettono automaticamente sulle sole viste attive.
 * **Efficienza e protezione dei confini tramite modello *Pull* e DTO:** la notifica leggera tramite `WorkspaceEvent` consente a ciascun controller di ignorare gli eventi non pertinenti ed evitare ricalcoli grafici superflui, mentre l'interrogazione successiva tramite i `record` immutabili di `it.unibg.kranki.core.dto` tutela l'*Information Hiding* ed evita di esporre lo stato interno modificabile del modello al thread di rendering JavaFX.
 
----
-
 ### 4.2.4 Façade
 
 #### Descrizione del pattern
@@ -96,8 +84,6 @@ Il pattern strutturale **Façade** interviene quando un sottosistema o un insiem
 Il pattern semplifica l'accesso al sottosistema interponendo un punto d'ingresso unificato:
 * **`Façade`:** classe che espone un'interfaccia di livello più alto, coesa e orientata ai casi d'uso verso i client esterni, delegando e orchestrando le chiamate verso le classi interne del sottosistema.
 * **Classi interne del sottosistema:** componenti specializzati che realizzano la logica dettagliata e rimangono schermati rispetto ai chiamanti esterni.
-
-![Diagramma UML Façade](resources/pattern-facade.png)
 
 #### Punto di applicazione in Kranki
 
