@@ -93,7 +93,7 @@ L'introduzione di queste facciate è essenziale per tradurre in pratica l'archit
 * **Coerenza del flusso transazionale:** centralizzare l'orchestrazione nei `Service` assicura che ogni comando proveniente dall'interfaccia esegua in modo rigoroso la sequenza *validazione delle regole di dominio → persistenza locale immediata → notifica agli osservatori*, impedendo che i controller grafici alterino in modo incoerente lo stato volatile dell'applicazione rispetto all'archivio locale sul disco.
 * **Elevata coesione:** suddividere il livello di servizio in cinque facciate focalizzate per area funzionale, anziché concentrare tutte le operazioni in un unico gestore monolitico centrale, mantiene elevata la coesione di ciascun `Service`, ne contiene la complessità ciclomatica, ne agevola la manutenzione e favorisce lo sviluppo parallelo.
 
-### 4.2.5 Pattern e principi architetturali complementari
+### 4.2.5 Principi architetturali complementari
 
 A completamento dei quattro *design pattern* principali, l'architettura di **Kranki** si appoggia trasversalmente a tre principi e meccanismi semplici, adottati per far collaborare i diversi moduli mantenendoli ordinati e indipendenti tra loro:
 
