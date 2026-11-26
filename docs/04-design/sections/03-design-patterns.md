@@ -1,4 +1,4 @@
-## 4.2 Design patterns
+## 4.2 Design pattern
 
 A completamento delle scelte architetturali, la progettazione dettagliata di **Kranki** si fonda sull'adozione mirata di quattro *design patterns* classici. Ciascun pattern risponde a specifiche esigenze di flessibilità, separazione delle responsabilità e contenimento della complessità strutturale tra i moduli del sistema.
 
