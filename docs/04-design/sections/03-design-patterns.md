@@ -59,7 +59,7 @@ Il pattern comportamentale **Observer** risolve il problema dell'aggiornamento r
 Il pattern disaccoppia il produttore delle notifiche dai suoi consumatori mediante l'introduzione di un contratto astratto di osservazione:
 * **`Observable`:** componente che mantiene l'elenco dinamico degli osservatori registrati (consentendone iscrizione e rimozione) e che si occupa di inviare una notifica al verificarsi di una variazione del suo stato.
 * **`Observer`:** interfaccia astratta che espone il metodo di notifica invocato dall'`Observable` al cambio di stato.
-* **`ConcreteObserver`:** implementazioni concrete interessate all'aggiornamento che si registrano presso l'`Observable` e reagiscono alle notifiche ricevute, mantenendo l'`Observable` completamente agnostico rispetto alla loro identità e al loro numero.
+* **`ConcreteObserver`:** implementazioni concrete interessate all'aggiornamento che si registrano presso l'`Observable` e reagiscono alle notifiche ricevute.
 
 La comunicazione reattiva tra il nucleo di dominio e le schermate persistenti dell'interfaccia grafica è realizzata attraverso i moduli `kranki-core` e `kranki-ui`:
 * **Infrastruttura di notifica (`it.unibg.kranki.core.observer`):** `WorkspaceObserver` definisce l'interfaccia *Observer*, mentre `WorkspaceNotifier` funge da *Observable* centralizzando la registrazione, la rimozione e la notifica degli osservatori. Le segnalazioni viaggiano tramite `WorkspaceEvent`, un oggetto immutabile e tipizzato da `WorkspaceEventType` che qualifica la natura dell'evento occorso senza trasportare entità di dominio mutabili.
