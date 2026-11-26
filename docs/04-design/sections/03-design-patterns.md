@@ -97,7 +97,7 @@ L'introduzione di queste facciate è essenziale per tradurre in pratica l'archit
 
 ### 4.2.5 Principi architetturali complementari
 
-A completamento dei quattro *design patterns* principali, l'architettura adotta tre ulteriori principi per disciplinare l'interazione tra i diversi moduli:
+A completamento dei quattro *design pattern* principali, l'architettura adotta tre ulteriori principi per disciplinare l'interazione tra i diversi moduli:
 
 * **`Dependency Inversion`:** i moduli centrali definiscono interfacce astratte che vengono poi realizzate dai moduli esterni. *Dove:* nelle porte di `core.port` (implementate in `kranki-db`) e in `WorkspaceObserver` (implementata in `kranki-ui`). *Motivo:* mantenere `kranki-core` isolato dai dettagli di salvataggio e grafica, evitando dipendenze circolari tra i moduli.
 * **`Dependency Injection`:** i componenti applicativi, grafici e infrastrutturali non istanziano autonomamente le proprie dipendenze, ma le ricevono dall'esterno tramite i parametri del costruttore. *Dove:* nei cinque `Service`, nei repository/gateway di `kranki-db` e nei controller JavaFX tramite `ControllerFactory`. *Motivo:* rendere espliciti i legami tra componenti, collegare moduli indipendenti rispettando la *Dependency Inversion* e facilitare la sostituzione delle dipendenze nei test unitari.
