@@ -67,7 +67,7 @@ Si è scelto di ricorrere a tale pattern per gestire la comunicazione reattiva t
 
 #### Motivazione della scelta
 
-La configurazione adottata risponde a precisi vincoli architetturali e di affidabilità dell'interfaccia:
+La configurazione adottata risponde a precisi vincoli architetturali:
 * **Integrità del grafo aciclico tra moduli e assenza di dipendenze circolari:** posizionare `WorkspaceObserver` e `WorkspaceNotifier` all'interno di `kranki-core`, lasciando i *ConcreteObserver* in `kranki-ui`, garantisce che tutte le dipendenze statiche puntino esclusivamente dallo strato grafico verso il nucleo logico. In questo modo `kranki-core` non introduce alcun riferimento a JavaFX né ai controller della UI, evitando cicli tra moduli e preservando la piena riutilizzabilità degli strati inferiori.
 * **Disaccoppiamento tra viste e supporto ad aggiornamenti asincroni:** senza il pattern **Observer**, i controller dovrebbero mantenere riferimenti reciproci diretti per notificarsi le modifiche. Con `WorkspaceNotifier`, variazioni originate da finestre secondarie, da scorciatoie da tastiera o da operazioni asincrone come la sincronizzazione remota si riflettono automaticamente sulle sole viste attive.
 * **Efficienza e protezione dei confini tramite modello *Pull* e DTO:** la notifica leggera tramite `WorkspaceEvent` consente a ciascun controller di ignorare gli eventi non pertinenti ed evitare ricalcoli grafici superflui, mentre l'interrogazione successiva tramite i `record` immutabili di `it.unibg.kranki.core.dto` tutela l'*Information Hiding* ed evita di esporre lo stato interno modificabile del modello al thread di rendering JavaFX.
