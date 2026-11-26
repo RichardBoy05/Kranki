@@ -43,7 +43,6 @@ Il meccanismo si basa sulla composizione esplicita tra due ruoli principali:
 #### Punto di applicazione in Kranki
 
 Il pattern trova applicazione all'interno del motore di scheduling in `kranki-core`. `ExamModeScheduler` (*Delegator*) riceve per composizione un riferimento a `Sm2Scheduler` (*Delegate*). In occasione di ogni calcolo di anteprima o aggiornamento di stato, `ExamModeScheduler` non replica le regole convenzionali di apprendimento, ma delega a `Sm2Scheduler` l'elaborazione base secondo il modello *SM-2*, applicando successivamente al risultato ottenuto la propria logica di compressione progressiva in funzione della scadenza.
-* **Serializzazione centralizzata (`kranki-db`):** un analogo meccanismo di delega condivisa viene adottato dalle classi di persistenza locale — `JsonLocalRepository`, `JsonMediaRepository` e `JsonDeckExchange` (`it.unibg.kranki.db.local`) — nonché da `FirebaseRemoteSyncGateway` (`it.unibg.kranki.db.firebase`), le quali delegano a `JsonCodec` (`it.unibg.kranki.db.serialization`) le operazioni di serializzazione e deserializzazione JSON e il trattamento dei payload interni, concentrando l'intera logica di conversione in un unico collaboratore specializzato.
 
 #### Motivazione della scelta
 
