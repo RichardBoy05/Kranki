@@ -76,7 +76,7 @@ La configurazione adottata risponde a precisi vincoli architetturali:
 
 #### Descrizione del pattern
 
-Il pattern strutturale **Façade** interviene quando un sottosistema o un insieme di package applicativi risulta articolato in numerose classi interagenti, costringendo i componenti chiamanti a conoscere e coordinare direttamente molte entità di dettaglio. Tale esposizione diretta rende complesso l'utilizzo del sottosistema e fa sì che qualsiasi modifica alla sua struttura interna obblighi a rivedere tutte le classi client che vi accedono.
+Il pattern strutturale **Façade** risponde all'esigenza di gestire sottosistemi composti da molteplici classi e package interconnessi, costringendo i componenti chiamanti a conoscere e coordinare direttamente molte entità. Tale esposizione diretta rende complesso l'utilizzo del sottosistema e comporta che qualsiasi modifica alla sua struttura interna richieda una revisione delle classi che vi accedono.
 
 Il pattern semplifica l'accesso al sottosistema interponendo un punto d'ingresso unificato:
 * **`Façade`:** classe che espone un'interfaccia di livello più alto, coesa e orientata ai casi d'uso verso i client esterni, delegando e orchestrando le chiamate verso le classi interne del sottosistema.
