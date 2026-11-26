@@ -33,7 +33,7 @@ L'adozione del pattern **Strategy** risulta determinante per mantenere elevata l
 
 #### Descrizione del pattern
 
-Il pattern **Delegation** risponde al problema del riuso comportamentale tra classi quando una classe necessita di sfruttare funzionalità già implementate da un altro componente, ma il ricorso all'ereditarietà non risulta semanticamente corretto. Un uso improprio della generalizzazione in questi scenari introdurrebbe fragilità nella gerarchia delle classi, esponendo dettagli interni o metodi non pertinenti al nuovo contesto.
+Il pattern **Delegation** risponde al problema del riuso comportamentale tra classi quando una classe necessita di sfruttare funzionalità già implementate da un altro componente, ma il ricorso all'ereditarietà non risulta semanticamente corretto.
 
 Il meccanismo si basa sulla composizione esplicita tra due ruoli principali:
 * **`Delegator`:** classe che espone il servizio verso l'esterno ma, invece di reimplementarne l'intera logica o ereditarla da una superclasse, inoltra l'esecuzione delle sotto-operazioni opportune a un oggetto collaboratore incapsulato.
