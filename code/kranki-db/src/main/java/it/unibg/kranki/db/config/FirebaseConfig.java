@@ -9,9 +9,9 @@ import java.util.Properties;
  * Holds Firebase configuration properties and builds REST endpoint URIs.
  */
 public class FirebaseConfig {
-    private static final String DEFAULT_PROPERTIES_FILE = "firebase.properties"; // standard declaration for constant
+    private static final String DEFAULT_PROPERTIES_FILE = "firebase.properties"; // standard declaration for a constant
     private final String apiKey;
-    private final String rtdbUrl; // added but will be implemented when developing REQ-2.
+    private final String rtdbUrl; // will be used in REQ-02
     private final String authUrl;
     private final String tokenUrl;
 
@@ -37,28 +37,41 @@ public class FirebaseConfig {
     }
 
     /**
-     * @return URI, standard for URLs. Distinguishes: protocol, host, path and parameters 
+     * Builds the Firebase Auth endpoint URI for registering a new user.
+     *
+     * @return the sign-up REST endpoint {@link URI}
      */
     public URI getSignUpUri() {
         // URI.create checks that the address is syntactically valid
         return URI.create(authUrl + "/accounts:signUp?key=" + apiKey);
     }
-
+    
+    /**
+     * Builds the Firebase Auth endpoint URI for signing in.
+     *
+     * @return the sing-in REST endpoint {@link URI}
+     */
     public URI getSignInUri() {
         return URI.create(authUrl + "/accounts:signInWithPassword?key=" + apiKey);
     }
 
+    /**
+     * Builds the Firebase Secure Token endpoint URI for refreshing an expired ID token.
+     *
+     * @return the token refresh REST endpoint {@link URI}
+     */
     public URI getRefreshTokenUri() {
         return URI.create(tokenUrl + "/token?key=" + apiKey);
     }
     
-    /**
+    /*
      * Why static: used in constructors, static methods are guaranteed not to accidentally 
      * read an object's field that has not yet been initialized.
      */
     private static Properties loadProperties(String fileName) { 
         Properties props = new Properties();
-        // Search for firebase.properties in the classpath and open an input stream
+        // Search for firebase.properties in the classpath and open an InputStream to read them
+        // try-catch automatically closes the InputStream even if an exception is thrown
         try (InputStream input = FirebaseConfig.class.getClassLoader().getResourceAsStream(fileName)) {
             // if the file doesn't exist, getResourceAsStream returns null
             if (input == null) {
