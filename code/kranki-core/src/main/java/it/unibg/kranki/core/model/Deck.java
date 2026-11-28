@@ -15,25 +15,15 @@ import java.util.Set;
 
 // ----------- << imports@AAAAAAGiHS0YT10cY50= >>
 import it.unibg.kranki.core.types.CardType;
-// ----------- >>
 
-// ----------- << class.annotations@AAAAAAGiHS0YT10cY50= >>
-// ----------- >>
 public class Deck {
-    // ----------- << attribute.annotations@AAAAAAGiHS0yJl1GCDM= >>
-    // ----------- >>
+
     private String id;
 
-    // ----------- << attribute.annotations@AAAAAAGiHS3Pjl1NodM= >>
-    // ----------- >>
     private String name;
 
-    // ----------- << attribute.annotations@AAAAAAGiHS4sGF1aqwg= >>
-    // ----------- >>
     private Instant updatedAt;
 
-    // ----------- << attribute.annotations@AAAAAAGiHTQYT2GL+jE= >>
-    // ----------- >>
     private Set<Flashcard> cards = new HashSet<>();
 
     private void setId(String id) {
@@ -53,11 +43,8 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHT5wYGXAY8U= >>
-    // ----------- >>
     public Deck(String name, Instant now) {
-        // ----------- << method.body@AAAAAAGiHT5wYGXAY8U= >>
-        // ----------- >>
+
     }
 
     /**
@@ -67,68 +54,54 @@ public class Deck {
      * @param updatedAt
      */
 
-    // ----------- << method.annotations@AAAAAAGiHT55bWXyLfY= >>
-    // ----------- >>
     public static Deck restore(String id, String name, Collection<Flashcard> cards, Instant updatedAt) {
-        // ----------- << method.body@AAAAAAGiHT55bWXyLfY= >>
+
         return null;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHT69MmYzY0E= >>
-    // ----------- >>
     public String getId() {
-        // ----------- << method.body@AAAAAAGiHT69MmYzY0E= >>
+
         return id;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHT7zPGZgkq4= >>
-    // ----------- >>
     public String getName() {
-        // ----------- << method.body@AAAAAAGiHT7zPGZgkq4= >>
+
         return name;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUPQTmt470o= >>
-    // ----------- >>
     public List<Flashcard> getCards() {
-        // ----------- << method.body@AAAAAAGiHUPQTmt470o= >>
+
         return List.copyOf(cards);
-        // ----------- >>
+
     }
 
     /**
      * @param cardId
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUP9Tmulnsg= >>
-    // ----------- >>
     public Optional<Flashcard> findCard(String cardId) {
-        // ----------- << method.body@AAAAAAGiHUP9Tmulnsg= >>
+
         return Optional.empty();
-        // ----------- >>
+
     }
 
     /**
      * @param cardId
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUQdS2vXd3M= >>
-    // ----------- >>
     public Flashcard getCardOrThrow(String cardId) {
-        // ----------- << method.body@AAAAAAGiHUQdS2vXd3M= >>
+
         return null;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUQ/QmwJuBs= >>
-    // ----------- >>
     public Instant getUpdatedAt() {
-        // ----------- << method.body@AAAAAAGiHUQ/QmwJuBs= >>
+
         return updatedAt;
-        // ----------- >>
+
     }
 
     /**
@@ -136,22 +109,16 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHURgPGw2dy8= >>
-    // ----------- >>
     public void rename(String newName, Instant now) {
-        // ----------- << method.body@AAAAAAGiHURgPGw2dy8= >>
-        // ----------- >>
+
     }
 
     /**
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUTCGWy2j4o= >>
-    // ----------- >>
     public void touch(Instant now) {
-        // ----------- << method.body@AAAAAAGiHUTCGWy2j4o= >>
-        // ----------- >>
+
     }
 
     /**
@@ -160,12 +127,10 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUTLM2zo1sA= >>
-    // ----------- >>
     public Flashcard addCard(String front, String back, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUTLM2zo1sA= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
@@ -175,12 +140,10 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUTxcG0k/q8= >>
-    // ----------- >>
     public List<Flashcard> addCard(String front, String back, CardType type, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUTxcG0k/q8= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
@@ -190,11 +153,8 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUUb4m1lecI= >>
-    // ----------- >>
     public void updateCardContent(String cardId, String front, String back, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUUb4m1lecI= >>
-        // ----------- >>
+
     }
 
     /**
@@ -202,12 +162,10 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUVGi22m/u0= >>
-    // ----------- >>
     public Flashcard removeCard(String cardId, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUVGi22m/u0= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
@@ -215,88 +173,68 @@ public class Deck {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUVjBW3dlpw= >>
-    // ----------- >>
     public void restoreCard(Flashcard card, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUVjBW3dlpw= >>
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUV+im4UvgM= >>
-    // ----------- >>
     public int awakenBuriedCards(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiHUV+im4UvgM= >>
         return 0;
-        // ----------- >>
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUWiCG5GsIo= >>
-    // ----------- >>
     public int getTotalCardCount() {
-        // ----------- << method.body@AAAAAAGiHUWiCG5GsIo= >>
+
         return 0;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUXBkm5zD5s= >>
-    // ----------- >>
     public int countDueCards(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiHUXBkm5zD5s= >>
+
         return 0;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUXjS26lZCA= >>
-    // ----------- >>
     public int countNewCards(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiHUXjS26lZCA= >>
+
         return 0;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUX/6m7XblY= >>
-    // ----------- >>
     public List<Flashcard> selectCardsForStudy(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiHUX/6m7XblY= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
      * @param o
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUYe4m8JY5k= >>
-    // ----------- >>
     public boolean equals(Object o) {
-        // ----------- << method.body@AAAAAAGiHUYe4m8JY5k= >>
+
         return false;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUY69W87xW8= >>
-    // ----------- >>
     public int hashCode() {
-        // ----------- << method.body@AAAAAAGiHUY69W87xW8= >>
+
         return 0;
-        // ----------- >>
+
     }
-// ----------- << class.extras@AAAAAAGiHS0YT10cY50= >>
-// ----------- >>
+
 }

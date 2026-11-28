@@ -14,29 +14,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-// ----------- << imports@AAAAAAGiHUbHcHCCVP4= >>
-// ----------- >>
-
-// ----------- << class.annotations@AAAAAAGiHUbHcHCCVP4= >>
-// ----------- >>
 public class Workspace {
-    // ----------- << attribute.annotations@AAAAAAGiHUwN3oXTotY= >>
-    // ----------- >>
+
     private Set<Deck> decks = new HashSet<>();
 
-    // ----------- << attribute.annotations@AAAAAAGiHU90UYuXv/w= >>
-    // ----------- >>
     private UserPreferences preferences;
 
     private void setPreferences(UserPreferences preferences) {
         this.preferences = preferences;
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUb4BnDN3nI= >>
-    // ----------- >>
     public Workspace() {
-        // ----------- << method.body@AAAAAAGiHUb4BnDN3nI= >>
-        // ----------- >>
+
     }
 
     /**
@@ -44,56 +33,46 @@ public class Workspace {
      * @param preferences
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUcd9XD1ZF8= >>
-    // ----------- >>
     public static Workspace restore(Collection<Deck> decks, UserPreferences preferences) {
-        // ----------- << method.body@AAAAAAGiHUcd9XD1ZF8= >>
+
         return null;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUdVLXEs524= >>
-    // ----------- >>
     public List<Deck> getDecks() {
-        // ----------- << method.body@AAAAAAGiHUdVLXEs524= >>
+
         return List.copyOf(decks);
-        // ----------- >>
+
     }
 
     /**
      * @param deckId
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUeaW3Fv/n4= >>
-    // ----------- >>
     public Optional<Deck> findDeck(String deckId) {
-        // ----------- << method.body@AAAAAAGiHUeaW3Fv/n4= >>
+
         return Optional.empty();
-        // ----------- >>
+
     }
 
     /**
      * @param deckId
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUf7NHGh5Oo= >>
-    // ----------- >>
     public Deck getDeckOrThrow(String deckId) {
-        // ----------- << method.body@AAAAAAGiHUf7NHGh5Oo= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
      * @param name
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUgjdnHT/G0= >>
-    // ----------- >>
     public boolean hasDeckWithName(String name) {
-        // ----------- << method.body@AAAAAAGiHUgjdnHT/G0= >>
+
         return false;
-        // ----------- >>
+
     }
 
     /**
@@ -101,12 +80,10 @@ public class Workspace {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUg/xnIFlRQ= >>
-    // ----------- >>
     public Deck createDeck(String name, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUg/xnIFlRQ= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
@@ -115,11 +92,8 @@ public class Workspace {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUhgzXI8x9s= >>
-    // ----------- >>
     public void renameDeck(String deckId, String newName, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUhgzXI8x9s= >>
-        // ----------- >>
+
     }
 
     /**
@@ -127,44 +101,34 @@ public class Workspace {
      * @param now
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUh+UXJ4vg8= >>
-    // ----------- >>
     public Deck deleteDeck(String deckId, Instant now) {
-        // ----------- << method.body@AAAAAAGiHUh+UXJ4vg8= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
      * @param deck
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUiocXKvtyk= >>
-    // ----------- >>
     public void restoreDeck(Deck deck) {
-        // ----------- << method.body@AAAAAAGiHUiocXKvtyk= >>
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiHUjFA3LhfIg= >>
-    // ----------- >>
     public UserPreferences getPreferences() {
-        // ----------- << method.body@AAAAAAGiHUjFA3LhfIg= >>
+
         return preferences;
-        // ----------- >>
+
     }
 
     /**
      * @param clock
      */
 
-    // ----------- << method.annotations@AAAAAAGiHUjgtnMOJic= >>
-    // ----------- >>
     public LocalDate currentLogicalDate(Clock clock) {
-        // ----------- << method.body@AAAAAAGiHUjgtnMOJic= >>
+
         return null;
-        // ----------- >>
+
     }
-// ----------- << class.extras@AAAAAAGiHUbHcHCCVP4= >>
-// ----------- >>
+
 }

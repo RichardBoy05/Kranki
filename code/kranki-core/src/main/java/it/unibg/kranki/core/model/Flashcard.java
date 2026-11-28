@@ -13,49 +13,27 @@ import java.util.Set;
 import it.unibg.kranki.core.types.CardFlag;
 import it.unibg.kranki.core.types.CardStatus;
 import it.unibg.kranki.core.types.CardType;
-// ----------- >>
 
-// ----------- << class.annotations@AAAAAAGiGNnajVtHUxQ= >>
-// ----------- >>
 public class Flashcard {
-    // ----------- << attribute.annotations@AAAAAAGiGNoj1VtxD8k= >>
-    // ----------- >>
+
     private String id;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNpd2Ft44XQ= >>
-    // ----------- >>
     private String front;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNqdZFt/gWg= >>
-    // ----------- >>
     private String back;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNugXVuNvZk= >>
-    // ----------- >>
     private CardStatus status;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNusp1uUf+A= >>
-    // ----------- >>
     private LocalDate buriedLogicalDate;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNvmLVubRyU= >>
-    // ----------- >>
     private CardFlag flag;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNxIc1uicQY= >>
-    // ----------- >>
     private Set<String> tags;
 
-    // ----------- << attribute.annotations@AAAAAAGiGNx1xVupNGo= >>
-    // ----------- >>
     private String linkedCardId;
 
-    // ----------- << attribute.annotations@AAAAAAGiHV2BPZ3j7is= >>
-    // ----------- >>
     private CardType type;
 
-    // ----------- << attribute.annotations@AAAAAAGiHVD7yZEi+Pc= >>
-    // ----------- >>
     private ReviewProgress progress;
 
     private void setId(String id) {
@@ -95,11 +73,8 @@ public class Flashcard {
      * @param back
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOd8F1uxKjA= >>
-    // ----------- >>
     public Flashcard(String front, String back) {
-        // ----------- << method.body@AAAAAAGiGOd8F1uxKjA= >>
-        // ----------- >>
+
     }
 
     /**
@@ -108,11 +83,8 @@ public class Flashcard {
      * @param type
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOeTyVu8uVE= >>
-    // ----------- >>
     public Flashcard(String front, String back, CardType type) {
-        // ----------- << method.body@AAAAAAGiGOeTyVu8uVE= >>
-        // ----------- >>
+
     }
 
     /**
@@ -128,93 +100,71 @@ public class Flashcard {
      * @param linkedCardId
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOfP31vJdxw= >>
-    // ----------- >>
     public static Flashcard restore(String id, String front, String back, ReviewProgress progress, CardType type,
             CardStatus status, LocalDate buriedLogicalDate, CardFlag flag, Set<String> tags, String linkedCardId) {
-        // ----------- << method.body@AAAAAAGiGOfP31vJdxw= >>
+
         return null;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOgCfVvmHTs= >>
-    // ----------- >>
     public String getId() {
-        // ----------- << method.body@AAAAAAGiGOgCfVvmHTs= >>
+
         return id;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOlx0lvwi3Q= >>
-    // ----------- >>
     public String getFront() {
-        // ----------- << method.body@AAAAAAGiGOlx0lvwi3Q= >>
+
         return front;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOnkL1v5LwY= >>
-    // ----------- >>
     public String getBack() {
-        // ----------- << method.body@AAAAAAGiGOnkL1v5LwY= >>
+
         return back;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOr6EFwCp5E= >>
-    // ----------- >>
     public ReviewProgress getProgress() {
-        // ----------- << method.body@AAAAAAGiGOr6EFwCp5E= >>
+
         return progress;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOtRNlwLr2Q= >>
-    // ----------- >>
     public CardType getType() {
-        // ----------- << method.body@AAAAAAGiGOtRNlwLr2Q= >>
+
         return type;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOuLFlwUAPY= >>
-    // ----------- >>
     public CardStatus getStatus() {
-        // ----------- << method.body@AAAAAAGiGOuLFlwUAPY= >>
+
         return status;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOu5UVwdv2A= >>
-    // ----------- >>
     public Optional<LocalDate> getBuriedLogicalDate() {
-        // ----------- << method.body@AAAAAAGiGOu5UVwdv2A= >>
+
         return Optional.ofNullable(buriedLogicalDate);
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOvpcFwmOko= >>
-    // ----------- >>
     public CardFlag getFlag() {
-        // ----------- << method.body@AAAAAAGiGOvpcFwmOko= >>
+
         return flag;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOwh/1wvRRY= >>
-    // ----------- >>
     public Set<String> getTags() {
-        // ----------- << method.body@AAAAAAGiGOwh/1wvRRY= >>
+
         return tags;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGOxU6Fw4ROA= >>
-    // ----------- >>
     public Optional<String> getLinkedCardId() {
-        // ----------- << method.body@AAAAAAGiGOxU6Fw4ROA= >>
+
         return Optional.ofNullable(linkedCardId);
-        // ----------- >>
+
     }
 
     /**
@@ -222,204 +172,150 @@ public class Flashcard {
      * @param back
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOyHm1xBdOI= >>
-    // ----------- >>
     public void updateContent(String front, String back) {
-        // ----------- << method.body@AAAAAAGiGOyHm1xBdOI= >>
-        // ----------- >>
+
     }
 
     /**
      * @param newProgress
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOyuy1xOhek= >>
-    // ----------- >>
     public void applyProgress(ReviewProgress newProgress) {
-        // ----------- << method.body@AAAAAAGiGOyuy1xOhek= >>
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiGOzXmlxZ17I= >>
-    // ----------- >>
     public CardStatus getEffectiveStatus(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiGOzXmlxZ17I= >>
+
         return null;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO0Xylxk25k= >>
-    // ----------- >>
     public boolean awakenIfUnburied(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiGO0Xylxk25k= >>
+
         return false;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGO1GQ1xvphE= >>
-    // ----------- >>
     public boolean isNew() {
-        // ----------- << method.body@AAAAAAGiGO1GQ1xvphE= >>
+
         return false;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO2z81x1HVk= >>
-    // ----------- >>
     public boolean isAvailableForStudy(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiGO2z81x1HVk= >>
+
         return false;
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO50jFyDGmY= >>
-    // ----------- >>
     public boolean isDue(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiGO50jFyDGmY= >>
+
         return false;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGO52U1yJyso= >>
-    // ----------- >>
     public void suspend() {
-        // ----------- << method.body@AAAAAAGiGO52U1yJyso= >>
-        // ----------- >>
+
     }
 
     /**
      * @param logicalToday
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO55jVyPqvk= >>
-    // ----------- >>
     public void bury(LocalDate logicalToday) {
-        // ----------- << method.body@AAAAAAGiGO55jVyPqvk= >>
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGO58BVyVSxc= >>
-    // ----------- >>
     public void activate() {
-        // ----------- << method.body@AAAAAAGiGO58BVyVSxc= >>
-        // ----------- >>
+
     }
 
     /**
      * @param newDueDate
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO5+61ybpHY= >>
-    // ----------- >>
     public void setDueDate(LocalDate newDueDate) {
-        // ----------- << method.body@AAAAAAGiGO5+61ybpHY= >>
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGO+UqFy2H/E= >>
-    // ----------- >>
     public void reset() {
-        // ----------- << method.body@AAAAAAGiGO+UqFy2H/E= >>
-        // ----------- >>
+
     }
 
     /**
      * @param flag
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO+4T1y/GSA= >>
-    // ----------- >>
     public void setFlag(CardFlag flag) {
-        // ----------- << method.body@AAAAAAGiGO+4T1y/GSA= >>
-        // ----------- >>
+
     }
 
     /**
      * @param tag
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO/esVzKdoQ= >>
-    // ----------- >>
     public void addTag(String tag) {
-        // ----------- << method.body@AAAAAAGiGO/esVzKdoQ= >>
-        // ----------- >>
+
     }
 
     /**
      * @param tag
      */
 
-    // ----------- << method.annotations@AAAAAAGiGO//u1zVPa0= >>
-    // ----------- >>
     public void removeTag(String tag) {
-        // ----------- << method.body@AAAAAAGiGO//u1zVPa0= >>
-        // ----------- >>
+
     }
 
     /**
      * @param tags
      */
 
-    // ----------- << method.annotations@AAAAAAGiGPAnLlzgpFs= >>
-    // ----------- >>
     public void setTags(Set<String> tags) {
-        // ----------- << method.body@AAAAAAGiGPAnLlzgpFs= >>
-        // ----------- >>
+
     }
 
     /**
      * @param o
      */
 
-    // ----------- << method.annotations@AAAAAAGiGPBKzlzrpWY= >>
-    // ----------- >>
     public boolean equals(Object o) {
-        // ----------- << method.body@AAAAAAGiGPBKzlzrpWY= >>
+
         return false;
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGPBvJFz2KU4= >>
-    // ----------- >>
     public int hashCode() {
-        // ----------- << method.body@AAAAAAGiGPBvJFz2KU4= >>
+
         return 0;
-        // ----------- >>
+
     }
 
     /**
      * @param twinCardId
      */
 
-    // ----------- << method.annotations@AAAAAAGiGPChc1z/Res= >>
-    // ----------- >>
     void linkTwinCard(String twinCardId) {
-        // ----------- << method.body@AAAAAAGiGPChc1z/Res= >>
-        // ----------- >>
+
     }
 
-    // ----------- << method.annotations@AAAAAAGiGPOfkV0Kbbw= >>
-    // ----------- >>
     void unlinkTwinCard() {
-        // ----------- << method.body@AAAAAAGiGPOfkV0Kbbw= >>
-        // ----------- >>
+
     }
-// ----------- << class.extras@AAAAAAGiGNnajVtHUxQ= >>
-// ----------- >>
+
 }
